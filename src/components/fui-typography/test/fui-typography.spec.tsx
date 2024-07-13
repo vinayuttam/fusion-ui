@@ -1,18 +1,18 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { FuiText } from '../fui-text';
+import { FUITypography } from '../fui-typography';
 
-describe('fui-text', () => {
+describe('fui-typography', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [FuiText],
-      html: `<fui-text></fui-text>`,
+      components: [FUITypography],
+      html: `<fui-typography></fui-typography>`,
     });
     expect(page.root).toEqualHtml(`
-      <fui-text>
+      <fui-typography>
         <mock:shadow-root>
           <slot></slot>
         </mock:shadow-root>
-      </fui-text>
+      </fui-typography>
     `);
   });
 });

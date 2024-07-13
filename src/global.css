@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:wght@300;400;500;700&display=swap');
+
+html,
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+:root {
+  --fui-color-primary: #1677ff;
+  --fui-color-primary-bg: #e6f4ff;
+  --fui-color-primary-bg-hover: #bae0ff;
+  --fui-color-primary-border: #91caff;
+  --fui-color-primary-border-hover: #69b1ff;
+  --fui-color-primary-hover: #4096ff;
+  --fui-color-primary-active: #0958d9;
+
+  --fui-color-success: #52c41a;
+  --fui-color-success-bg: #f6ffed;
+  --fui-color-success-bg-hover: #d9f7be;
+  --fui-color-success-border: #b7eb8f;
+  --fui-color-success-border-hover: #95de64;
+  --fui-color-success-hover: #73d13d;
+  --fui-color-success-active: #389e0d;
+
+  --fui-color-warning: #faad14;
+  --fui-color-warning-bg: #fffbe6;
+  --fui-color-warning-bg-hover: #fff1b8;
+  --fui-color-warning-border: #ffe58f;
+  --fui-color-warning-border-hover: #ffd666;
+  --fui-color-warning-hover: #ffc53d;
+  --fui-color-warning-active: #d48806;
+
+  --fui-color-danger: #ff4d4f;
+  --fui-color-danger-bg: #fff2f0;
+  --fui-color-danger-bg-hover: #fff1f0;
+  --fui-color-danger-border: #ffccc7;
+  --fui-color-danger-border-hover: #ffa39e;
+  --fui-color-danger-hover: #ff7875;
+  --fui-color-danger-active: #d9363e;
+
+  --fui-base-text-color: #000;
+  --fui-base-bg-color: #fff;
+
+  --fui-dark-base-text-color: #fff;
+  --fui-dark-bg-color: #000;
+
+  --fui-text-color: rgba(0, 0, 0, 0.88);
+  --fui-text-color-secondary: rgba(0, 0, 0, 0.65);
+  --fui-text-color-teritary: rgba(0, 0, 0, 0.45);
+  --fui-text-color-quartenary: rgba(0, 0, 0, 0.25);
+
+  --fui-dark-text-color: rgba(255, 255, 255, 0.25);
+  --fui-dark-text-color-secondary: rgba(255, 255, 255, 0.65);
+  --fui-dark-text-color-teritary: rgba(255, 255, 255, 0.45);
+  --fui-dark-text-color-quartenary: rgba(255, 255, 255, 0.25);
+
+  --fui-border-color: #d9d9d9;
+  --fui-border-color-secondary: #f0f0f0;
+
+  --fui-dark-border-color: #424242;
+  --fui-dark-border-color-secondary: #303030;
+
+  --fui-fill-color: rgba(0, 0, 0, 0.15);
+  --fui-fill-color-secondary: rgba(0, 0, 0, 0.06);
+  --fui-fill-color-teritary: rgba(0, 0, 0, 0.04);
+  --fui-fill-color-quarternary: rgba(0, 0, 0, 0.02);
+
+  --fui-dark-fill-color: rgba(255, 255, 255, 0.18);
+  --fui-dark-fill-color-secondary: rgba(255, 255, 255, 0.12);
+  --fui-dark-fill-color-teritary: rgba(255, 255, 255, 0.08);
+  --fui-dark-fill-color-quartenary: rgba(255, 255, 255, 0.04);
+
+  --fui-bg-container: #ffffff;
+  --fui-bg-elevated: #ffffff;
+  --fui-bg-layout: #f5f5f5;
+  --fui-bg-spotlight: rgba(0, 0, 0, 0.85);
+  --fui-bg-mask: rgba(0, 0, 0, 0.45);
+
+  --fui-box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08),
+    0 3px 6px -4px rgba(0, 0, 0, 0.12),
+    0 9px 28px 8px rgba(0, 0, 0, 0.05);
+
+  --fui-box-shadow-secondary: 0 6px 16px 0 rgba(0, 0, 0, 0.08),
+    0 3px 6px -4px rgba(0, 0, 0, 0.12),
+    0 9px 28px 8px rgba(0, 0, 0, 0.05);
+}

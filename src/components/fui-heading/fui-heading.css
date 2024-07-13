@@ -1,0 +1,59 @@
+:host {
+  display: block;
+}
+
+.fui-heading {
+  margin-bottom: 0.5rem;
+  color: var(--fui-text-color);
+  font-weight: 600;
+}
+
+.fui-heading-1 {
+  font-size: 2.875rem;
+  line-height: 3.375rem;
+}
+
+.fui-heading-2 {
+  font-size: 2.375rem;
+  line-height: 2.875rem;
+}
+
+.fui-heading-3 {
+  font-size: 1.875rem;
+  line-height: 2.375rem;
+}
+
+.fui-heading-4 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.fui-heading-5 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.fui-heading-6 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.fui-heading-primary {
+  color: var(--fui-color-primary);
+}
+
+.fui-heading-secondary {
+  color: var(--fui-text-color-secondary);
+}
+
+.fui-heading-warning {
+  color: var(--fui-color-warning);
+}
+
+.fui-heading-success {
+  color: var(--fui-color-success);
+}
+
+.fui-heading-danger {
+  color: var(--fui-color-danger);
+}

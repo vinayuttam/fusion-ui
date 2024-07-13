@@ -1,0 +1,52 @@
+:host {
+  display: block;
+}
+
+.fui-typography {
+  color: var(--fui-text-color);
+}
+
+.fui-typography-text {
+  color: var(--fui-text-color);
+}
+
+.fui-typography-secondary {
+  color: var(--fui-text-color-secondary);
+}
+
+.fui-typography-success {
+  color: var(--fui-color-success);
+}
+
+.fui-typography-warning {
+  color: var(--fui-color-warning);
+}
+
+.fui-typography-danger {
+  color: var(--fui-color-danger);
+}
+
+.fui-typography-disabled {
+  color: var(--fui-text-color-disabled);
+  cursor: not-allowed;
+}
+
+.fui-typography-mark {
+  background-color: var(--fui-color-warning-border);
+}
+
+.fui-typography-underline {
+  text-decoration: underline;
+}
+
+.fui-typography-delete {
+  text-decoration: line-through;
+}
+
+.fui-typography-strong {
+  font-weight: bold;
+}
+
+.fui-typography-italic {
+  font-style: italic;
+}

@@ -6,56 +6,67 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface FuiHeading {
+        "level": 1 | 2 | 3 | 4 | 5 | 6;
+        "type": 'secondary' | 'success' | 'warning' | 'danger';
+    }
+    interface FuiTypography {
+        "code": boolean;
+        "deleted": boolean;
+        "disabled": boolean;
+        "italic": boolean;
+        "keyboard": boolean;
+        "mark": boolean;
+        "strong": boolean;
+        "type": 'text' | 'secondary' | 'success' | 'warning' | 'danger';
+        "underline": boolean;
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLFuiHeadingElement extends Components.FuiHeading, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLFuiHeadingElement: {
+        prototype: HTMLFuiHeadingElement;
+        new (): HTMLFuiHeadingElement;
+    };
+    interface HTMLFuiTypographyElement extends Components.FuiTypography, HTMLStencilElement {
+    }
+    var HTMLFuiTypographyElement: {
+        prototype: HTMLFuiTypographyElement;
+        new (): HTMLFuiTypographyElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "fui-heading": HTMLFuiHeadingElement;
+        "fui-typography": HTMLFuiTypographyElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface FuiHeading {
+        "level"?: 1 | 2 | 3 | 4 | 5 | 6;
+        "type"?: 'secondary' | 'success' | 'warning' | 'danger';
+    }
+    interface FuiTypography {
+        "code"?: boolean;
+        "deleted"?: boolean;
+        "disabled"?: boolean;
+        "italic"?: boolean;
+        "keyboard"?: boolean;
+        "mark"?: boolean;
+        "strong"?: boolean;
+        "type"?: 'text' | 'secondary' | 'success' | 'warning' | 'danger';
+        "underline"?: boolean;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "fui-heading": FuiHeading;
+        "fui-typography": FuiTypography;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "fui-heading": LocalJSX.FuiHeading & JSXBase.HTMLAttributes<HTMLFuiHeadingElement>;
+            "fui-typography": LocalJSX.FuiTypography & JSXBase.HTMLAttributes<HTMLFuiTypographyElement>;
         }
     }
 }
