@@ -10,7 +10,9 @@ describe('fui-typography', () => {
     expect(page.root).toEqualHtml(`
       <fui-typography>
         <mock:shadow-root>
-          <slot></slot>
+          <span class="fui-typography fui-typography-text">
+            <slot></slot>
+          </span>
         </mock:shadow-root>
       </fui-typography>
     `);

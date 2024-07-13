@@ -10,7 +10,9 @@ describe('fui-heading', () => {
     expect(page.root).toEqualHtml(`
       <fui-heading>
         <mock:shadow-root>
-          <slot></slot>
+          <h1 class="fui-heading fui-heading-1">
+            <slot></slot>
+          </h1>
         </mock:shadow-root>
       </fui-heading>
     `);
