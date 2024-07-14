@@ -5,7 +5,7 @@ import { Component, Prop, h } from '@stencil/core';
   styleUrl: 'fui-flex.css',
   shadow: true,
 })
-export class FuiFlex {
+export class FUIFlex {
   @Prop() vertical: boolean = false;
   @Prop() wrap: 'nowrap' | 'wrap' | 'wrap-reverse' = 'nowrap';
   @Prop() justify: 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly' = 'flex-start';

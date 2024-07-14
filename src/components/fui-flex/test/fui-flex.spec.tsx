@@ -1,10 +1,10 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { FuiFlex } from '../fui-flex';
+import { FUIFlex } from '../fui-flex';
 
 describe('fui-flex', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [FuiFlex],
+      components: [FUIFlex],
       html: `<fui-flex></fui-flex>`,
     });
     expect(page.root).toEqualHtml(`
