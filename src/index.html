@@ -21,6 +21,14 @@
     <fui-heading level="6" type="primary">Heading Level Six</fui-heading>
   </div>
 
+  <div class="fui-segment-container">
+    <fui-segment value="weekly" block>
+      <fui-segment-option label="Daily" value="daily"></fui-segment-option>
+      <fui-segment-option label="Weekly" value="weekly"></fui-segment-option>
+      <fui-segment-option label="Monthly" value="monthly"></fui-segment-option>
+    </fui-segment>
+  </div>
+
   <div class="fui-typography-container">
     <fui-typography type="text">This is a text</fui-typography>
     <fui-typography type="secondary">This is a secondary text</fui-typography>
@@ -48,6 +56,15 @@
       <fui-button type="primary" danger block>Primary Button</fui-button>
     </fui-flex>
   </div>
+
+  <script>
+    // Example on how to listen to the change in value of segment
+    const segmentedElement = document.querySelector('fui-segment');
+    segmentedElement.addEventListener('segmentValueChange', (event) => {
+      console.log('Selected value:', event.detail);
+    });
+  </script>
+
 </body>
 
 </html>

@@ -78,6 +78,8 @@ body {
   --fui-bg-spotlight: rgba(0, 0, 0, 0.85);
   --fui-bg-mask: rgba(0, 0, 0, 0.45);
 
+  --fui-bg-segment: #e7e7e7;
+
   --fui-box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08),
     0 3px 6px -4px rgba(0, 0, 0, 0.12),
     0 9px 28px 8px rgba(0, 0, 0, 0.05);
