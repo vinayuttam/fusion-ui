@@ -12,6 +12,13 @@ export namespace Components {
         "size": 'large' | 'middle' | 'small';
         "type": 'primary' | 'default' | 'dashed' | 'text' | 'link';
     }
+    interface FuiFlex {
+        "align": 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch';
+        "gap": string | [string, string];
+        "justify": 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly';
+        "vertical": boolean;
+        "wrap": 'nowrap' | 'wrap' | 'wrap-reverse';
+    }
     interface FuiHeading {
         "level": 1 | 2 | 3 | 4 | 5 | 6;
         "type": 'secondary' | 'success' | 'warning' | 'danger';
@@ -35,6 +42,12 @@ declare global {
         prototype: HTMLFuiButtonElement;
         new (): HTMLFuiButtonElement;
     };
+    interface HTMLFuiFlexElement extends Components.FuiFlex, HTMLStencilElement {
+    }
+    var HTMLFuiFlexElement: {
+        prototype: HTMLFuiFlexElement;
+        new (): HTMLFuiFlexElement;
+    };
     interface HTMLFuiHeadingElement extends Components.FuiHeading, HTMLStencilElement {
     }
     var HTMLFuiHeadingElement: {
@@ -49,6 +62,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "fui-button": HTMLFuiButtonElement;
+        "fui-flex": HTMLFuiFlexElement;
         "fui-heading": HTMLFuiHeadingElement;
         "fui-typography": HTMLFuiTypographyElement;
     }
@@ -59,6 +73,13 @@ declare namespace LocalJSX {
         "danger"?: boolean;
         "size"?: 'large' | 'middle' | 'small';
         "type"?: 'primary' | 'default' | 'dashed' | 'text' | 'link';
+    }
+    interface FuiFlex {
+        "align"?: 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch';
+        "gap"?: string | [string, string];
+        "justify"?: 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly';
+        "vertical"?: boolean;
+        "wrap"?: 'nowrap' | 'wrap' | 'wrap-reverse';
     }
     interface FuiHeading {
         "level"?: 1 | 2 | 3 | 4 | 5 | 6;
@@ -77,6 +98,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "fui-button": FuiButton;
+        "fui-flex": FuiFlex;
         "fui-heading": FuiHeading;
         "fui-typography": FuiTypography;
     }
@@ -86,6 +108,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "fui-button": LocalJSX.FuiButton & JSXBase.HTMLAttributes<HTMLFuiButtonElement>;
+            "fui-flex": LocalJSX.FuiFlex & JSXBase.HTMLAttributes<HTMLFuiFlexElement>;
             "fui-heading": LocalJSX.FuiHeading & JSXBase.HTMLAttributes<HTMLFuiHeadingElement>;
             "fui-typography": LocalJSX.FuiTypography & JSXBase.HTMLAttributes<HTMLFuiTypographyElement>;
         }
