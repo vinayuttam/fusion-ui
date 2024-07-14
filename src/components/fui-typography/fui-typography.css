@@ -4,6 +4,8 @@
 
 .fui-typography {
   color: var(--fui-text-color);
+  font-size: 0.875rem;
+  line-height: 1.375rem;
 }
 
 .fui-typography-text {

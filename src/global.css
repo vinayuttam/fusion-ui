@@ -6,6 +6,8 @@ body {
 }
 
 :root {
+  --fui-color-text-solid: #fff;
+
   --fui-color-primary: #1677ff;
   --fui-color-primary-bg: #e6f4ff;
   --fui-color-primary-bg-hover: #bae0ff;
@@ -83,4 +85,9 @@ body {
   --fui-box-shadow-secondary: 0 6px 16px 0 rgba(0, 0, 0, 0.08),
     0 3px 6px -4px rgba(0, 0, 0, 0.12),
     0 9px 28px 8px rgba(0, 0, 0, 0.05);
+
+  --fui-border-radius-xs: 2px;
+  --fui-border-radius-sm: 4px;
+  --fui-border-radius: 6px;
+  --fui-border-radius-lg: 8px;
 }

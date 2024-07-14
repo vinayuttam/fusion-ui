@@ -6,6 +6,12 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface FuiButton {
+        "block": boolean;
+        "danger": boolean;
+        "size": 'large' | 'middle' | 'small';
+        "type": 'primary' | 'default' | 'dashed' | 'text' | 'link';
+    }
     interface FuiHeading {
         "level": 1 | 2 | 3 | 4 | 5 | 6;
         "type": 'secondary' | 'success' | 'warning' | 'danger';
@@ -23,6 +29,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLFuiButtonElement extends Components.FuiButton, HTMLStencilElement {
+    }
+    var HTMLFuiButtonElement: {
+        prototype: HTMLFuiButtonElement;
+        new (): HTMLFuiButtonElement;
+    };
     interface HTMLFuiHeadingElement extends Components.FuiHeading, HTMLStencilElement {
     }
     var HTMLFuiHeadingElement: {
@@ -36,11 +48,18 @@ declare global {
         new (): HTMLFuiTypographyElement;
     };
     interface HTMLElementTagNameMap {
+        "fui-button": HTMLFuiButtonElement;
         "fui-heading": HTMLFuiHeadingElement;
         "fui-typography": HTMLFuiTypographyElement;
     }
 }
 declare namespace LocalJSX {
+    interface FuiButton {
+        "block"?: boolean;
+        "danger"?: boolean;
+        "size"?: 'large' | 'middle' | 'small';
+        "type"?: 'primary' | 'default' | 'dashed' | 'text' | 'link';
+    }
     interface FuiHeading {
         "level"?: 1 | 2 | 3 | 4 | 5 | 6;
         "type"?: 'secondary' | 'success' | 'warning' | 'danger';
@@ -57,6 +76,7 @@ declare namespace LocalJSX {
         "underline"?: boolean;
     }
     interface IntrinsicElements {
+        "fui-button": FuiButton;
         "fui-heading": FuiHeading;
         "fui-typography": FuiTypography;
     }
@@ -65,6 +85,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "fui-button": LocalJSX.FuiButton & JSXBase.HTMLAttributes<HTMLFuiButtonElement>;
             "fui-heading": LocalJSX.FuiHeading & JSXBase.HTMLAttributes<HTMLFuiHeadingElement>;
             "fui-typography": LocalJSX.FuiTypography & JSXBase.HTMLAttributes<HTMLFuiTypographyElement>;
         }
