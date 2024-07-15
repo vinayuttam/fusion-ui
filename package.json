@@ -47,5 +47,8 @@
       "require": "./loader/index.cjs",
       "types": "./loader/index.d.ts"
     }
+  },
+  "dependencies": {
+    "date-fns": "^3.6.0"
   }
 }

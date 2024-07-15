@@ -43,6 +43,42 @@
     <fui-typography italic>This is an italic text</fui-typography>
   </div>
 
+  <fui-select placeholder="Select fruits" options-json='[
+      {"label": "Apple", "value": "apple"},
+      {"label": "Banana", "value": "banana"},
+      {"label": "Cherry", "value": "cherry"},
+      {"label": "Durian", "value": "durian"}
+    ]' multiple tags></fui-select>
+
+  <script>
+    document.querySelector('fui-select').addEventListener('change', (event) => {
+      console.log('Selected values:', event.detail);
+    });
+  </script>
+
+  <div class="fui-date-range-container" style="height: 100px;">
+    <fui-date-range-picker id="my-date-picker"></fui-date-range-picker>
+    <div id="selected-range">Selected Range: None</div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const datePicker = document.getElementById('my-date-picker');
+      const selectedRange = document.getElementById('selected-range');
+
+      datePicker.addEventListener('changeDate', function (event) {
+        const [startDate, endDate] = event.detail;
+        const formattedStart = startDate ? startDate.toLocaleDateString() : 'None';
+        const formattedEnd = endDate ? endDate.toLocaleDateString() : 'None';
+        selectedRange.textContent = `Selected Range: ${formattedStart} - ${formattedEnd}`;
+      });
+
+      // Optional: Set some properties
+      datePicker.dateFormat = 'MM/dd/yyyy';
+      datePicker.disabledDate = (date) => date < new Date();
+    });
+  </script>
+
   <div class="fui-button-container">
     <fui-flex gap="8px" horizontal justify="space-evenly">
       <fui-button type="primary">Primary Button</fui-button>
