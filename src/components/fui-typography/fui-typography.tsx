@@ -29,12 +29,11 @@ export class FUITypography {
           'fui-typography-underline': this.underline,
           'fui-typography-delete': this.deleted,
           'fui-typography-strong': this.strong,
-          'fui-typography-italic': this.italic
+          'fui-typography-italic': this.italic,
         }}
       >
         <slot></slot>
       </Tag>
     );
   }
-
 }

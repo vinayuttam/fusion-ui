@@ -13,11 +13,14 @@ export namespace Components {
         "type": 'primary' | 'default' | 'dashed' | 'text' | 'link';
     }
     interface FuiFlex {
-        "align": 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch';
-        "gap": string | [string, string];
-        "justify": 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly';
+        "align": 'normal' | 'stretch' | 'center' | 'start' | 'end' | 'flex-start' | 'flex-end' | 'self-start' | 'self-end' | 'baseline';
+        "component": string;
+        "flex": string;
+        "gap": 'small' | 'middle' | 'large' | string | number | [string, string];
+        "justify": 'normal' | 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly' | 'stretch' | 'left' | 'right';
+        "orientation": 'horizontal' | 'vertical';
         "vertical": boolean;
-        "wrap": 'nowrap' | 'wrap' | 'wrap-reverse';
+        "wrap": boolean | 'nowrap' | 'wrap' | 'wrap-reverse';
     }
     interface FuiHeading {
         "level": 1 | 2 | 3 | 4 | 5 | 6;
@@ -116,11 +119,14 @@ declare namespace LocalJSX {
         "type"?: 'primary' | 'default' | 'dashed' | 'text' | 'link';
     }
     interface FuiFlex {
-        "align"?: 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch';
-        "gap"?: string | [string, string];
-        "justify"?: 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly';
+        "align"?: 'normal' | 'stretch' | 'center' | 'start' | 'end' | 'flex-start' | 'flex-end' | 'self-start' | 'self-end' | 'baseline';
+        "component"?: string;
+        "flex"?: string;
+        "gap"?: 'small' | 'middle' | 'large' | string | number | [string, string];
+        "justify"?: 'normal' | 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly' | 'stretch' | 'left' | 'right';
+        "orientation"?: 'horizontal' | 'vertical';
         "vertical"?: boolean;
-        "wrap"?: 'nowrap' | 'wrap' | 'wrap-reverse';
+        "wrap"?: boolean | 'nowrap' | 'wrap' | 'wrap-reverse';
     }
     interface FuiHeading {
         "level"?: 1 | 2 | 3 | 4 | 5 | 6;

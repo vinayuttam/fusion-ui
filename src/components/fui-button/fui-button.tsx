@@ -5,7 +5,6 @@ import { Component, Prop, h } from '@stencil/core';
   styleUrl: 'fui-button.css',
   shadow: true,
 })
-
 export class FUIButton {
   @Prop() type: 'primary' | 'default' | 'dashed' | 'text' | 'link' = 'default';
   @Prop() size: 'large' | 'middle' | 'small' = 'middle';

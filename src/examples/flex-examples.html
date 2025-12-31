@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>FUI Flex Component Examples</title>
+  <link rel="stylesheet" href="/build/fusion-ui.css">
+  <script type="module" src="/build/fusion-ui.esm.js"></script>
+  <script nomodule src="/build/fusion-ui.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .example-section {
+      margin-bottom: 40px;
+      padding: 20px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+    }
+    
+    .example-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #1890ff;
+    }
+    
+    .example-description {
+      margin-bottom: 15px;
+      color: #666;
+      font-size: 14px;
+    }
+    
+    .demo-item {
+      padding: 12px 16px;
+      background: #1890ff;
+      color: white;
+      border-radius: 4px;
+      text-align: center;
+      min-width: 80px;
+    }
+    
+    .demo-item.large {
+      min-width: 120px;
+      min-height: 60px;
+    }
+    
+    .demo-item.medium {
+      min-width: 100px;
+      min-height: 50px;
+    }
+    
+    .demo-item.small {
+      min-width: 60px;
+      min-height: 40px;
+    }
+    
+    .demo-item.alternate {
+      background: #52c41a;
+    }
+    
+    .demo-item.warning {
+      background: #faad14;
+    }
+    
+    .demo-item.danger {
+      background: #ff4d4f;
+    }
+    
+    .demo-item.medium {
+      background: #722ed1;
+    }
+    
+    .control-panel {
+      margin-bottom: 20px;
+      padding: 15px;
+      background: #f5f5f5;
+      border-radius: 4px;
+    }
+    
+    .control-label {
+      font-weight: bold;
+      margin-right: 10px;
+    }
+    
+    .interactive-demo {
+      border: 2px dashed #d9d9d9;
+      background: #fafafa;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>FUI Flex Component Examples</h1>
+  <p>Comprehensive examples showcasing all features of the FUI Flex component, compatible with Ant Design's Flex component.</p>
+
+  <!-- Basic Usage -->
+  <div class="example-section">
+    <div class="example-title">Basic Usage</div>
+    <div class="example-description">Simple horizontal flex layout with default gap</div>
+    <fui-flex gap="small">
+      <div class="demo-item">Item 1</div>
+      <div class="demo-item">Item 2</div>
+      <div class="demo-item">Item 3</div>
+    </fui-flex>
+  </div>
+
+  <!-- Direction Examples -->
+  <div class="example-section">
+    <div class="example-title">Direction Control</div>
+    <div class="example-description">Control flex direction using orientation or vertical properties</div>
+    
+    <h4>Horizontal (default)</h4>
+    <fui-flex gap="middle">
+      <div class="demo-item">Horizontal 1</div>
+      <div class="demo-item">Horizontal 2</div>
+      <div class="demo-item">Horizontal 3</div>
+    </fui-flex>
+    
+    <h4>Vertical</h4>
+    <fui-flex orientation="vertical" gap="middle">
+      <div class="demo-item">Vertical 1</div>
+      <div class="demo-item">Vertical 2</div>
+      <div class="demo-item">Vertical 3</div>
+    </fui-flex>
+    
+    <h4>Vertical with vertical property</h4>
+    <fui-flex vertical gap="middle">
+      <div class="demo-item">Vertical 1</div>
+      <div class="demo-item">Vertical 2</div>
+      <div class="demo-item">Vertical 3</div>
+    </fui-flex>
+  </div>
+
+  <!-- Justify Content Examples -->
+  <div class="example-section">
+    <div class="example-title">Justify Content</div>
+    <div class="example-description">Control horizontal alignment of flex items</div>
+    
+    <h4>Flex Start</h4>
+    <fui-flex justify="flex-start" gap="small">
+      <div class="demo-item small">Start</div>
+      <div class="demo-item large">Large Item</div>
+      <div class="demo-item small">Start</div>
+    </fui-flex>
+    
+    <h4>Center</h4>
+    <fui-flex justify="center" gap="small">
+      <div class="demo-item small">Center</div>
+      <div class="demo-item large">Large Item</div>
+      <div class="demo-item small">Center</div>
+    </fui-flex>
+    
+    <h4>Flex End</h4>
+    <fui-flex justify="flex-end" gap="small">
+      <div class="demo-item small">End</div>
+      <div class="demo-item large">Large Item</div>
+      <div class="demo-item small">End</div>
+    </fui-flex>
+    
+    <h4>Space Between</h4>
+    <fui-flex justify="space-between" gap="small">
+      <div class="demo-item small">Between</div>
+      <div class="demo-item large">Large Item</div>
+      <div class="demo-item small">Between</div>
+    </fui-flex>
+    
+    <h4>Space Around</h4>
+    <fui-flex justify="space-around" gap="small">
+      <div class="demo-item small">Around</div>
+      <div class="demo-item large">Large Item</div>
+      <div class="demo-item small">Around</div>
+    </fui-flex>
+    
+    <h4>Space Evenly</h4>
+    <fui-flex justify="space-evenly" gap="small">
+      <div class="demo-item small">Evenly</div>
+      <div class="demo-item large">Large Item</div>
+      <div class="demo-item small">Evenly</div>
+    </fui-flex>
+  </div>
+
+  <!-- Align Items Examples -->
+  <div class="example-section">
+    <div class="example-title">Align Items</div>
+    <div class="example-description">Control vertical alignment of flex items</div>
+    
+    <h4>Flex Start (default for horizontal)</h4>
+    <fui-flex align="flex-start" gap="small" style="height: 100px; border: 1px solid #ccc;">
+      <div class="demo-item small">Start</div>
+      <div class="demo-item large">Large Item</div>
+      <div class="demo-item small">Start</div>
+    </fui-flex>
+    
+    <h4>Center</h4>
+    <fui-flex align="center" gap="small" style="height: 100px; border: 1px solid #ccc;">
+      <div class="demo-item small">Center</div>
+      <div class="demo-item large">Large Item</div>
+      <div class="demo-item small">Center</div>
+    </fui-flex>
+    
+    <h4>Flex End</h4>
+    <fui-flex align="flex-end" gap="small" style="height: 100px; border: 1px solid #ccc;">
+      <div class="demo-item small">End</div>
+      <div class="demo-item large">Large Item</div>
+      <div class="demo-item small">End</div>
+    </fui-flex>
+    
+    <h4>Stretch (default for vertical)</h4>
+    <fui-flex align="stretch" gap="small" style="height: 100px; border: 1px solid #ccc;">
+      <div class="demo-item small">Stretch</div>
+      <div class="demo-item large">Large Item</div>
+      <div class="demo-item small">Stretch</div>
+    </fui-flex>
+    
+    <h4>Baseline</h4>
+    <fui-flex align="baseline" gap="small" style="height: 100px; border: 1px solid #ccc;">
+      <div class="demo-item" style="font-size: 12px;">Small</div>
+      <div class="demo-item" style="font-size: 24px;">Large Text</div>
+      <div class="demo-item" style="font-size: 12px;">Small</div>
+    </fui-flex>
+  </div>
+
+  <!-- Gap Examples -->
+  <div class="example-section">
+    <div class="example-title">Gap Spacing</div>
+    <div class="example-description">Control spacing between flex items using gap presets or custom values</div>
+    
+    <h4>Small Gap (6px)</h4>
+    <fui-flex gap="small">
+      <div class="demo-item">Small</div>
+      <div class="demo-item">Gap</div>
+      <div class="demo-item">Small</div>
+    </fui-flex>
+    
+    <h4>Middle Gap (12px)</h4>
+    <fui-flex gap="middle">
+      <div class="demo-item">Middle</div>
+      <div class="demo-item">Gap</div>
+      <div class="demo-item">Middle</div>
+    </fui-flex>
+    
+    <h4>Large Gap (24px)</h4>
+    <fui-flex gap="large">
+      <div class="demo-item">Large</div>
+      <div class="demo-item">Gap</div>
+      <div class="demo-item">Large</div>
+    </fui-flex>
+    
+    <h4>Custom Gap (20px)</h4>
+    <fui-flex gap="20px">
+      <div class="demo-item">Custom</div>
+      <div class="demo-item">Gap</div>
+      <div class="demo-item">Custom</div>
+    </fui-flex>
+  </div>
+
+  <!-- Wrap Examples -->
+  <div class="example-section">
+    <div class="example-title">Wrap Control</div>
+    <div class="example-description">Control how flex items wrap when they run out of space</div>
+    
+    <h4>No Wrap (default)</h4>
+    <fui-flex wrap="nowrap" gap="small" style="width: 300px; border: 1px solid #ccc;">
+      <div class="demo-item">Item 1</div>
+      <div class="demo-item">Item 2</div>
+      <div class="demo-item">Item 3</div>
+      <div class="demo-item">Item 4</div>
+      <div class="demo-item">Item 5</div>
+    </fui-flex>
+    
+    <h4>Wrap</h4>
+    <fui-flex wrap="wrap" gap="small" style="width: 300px; border: 1px solid #ccc;">
+      <div class="demo-item">Item 1</div>
+      <div class="demo-item">Item 2</div>
+      <div class="demo-item">Item 3</div>
+      <div class="demo-item">Item 4</div>
+      <div class="demo-item">Item 5</div>
+    </fui-flex>
+    
+    <h4>Wrap Reverse</h4>
+    <fui-flex wrap="wrap-reverse" gap="small" style="width: 300px; border: 1px solid #ccc;">
+      <div class="demo-item">Item 1</div>
+      <div class="demo-item">Item 2</div>
+      <div class="demo-item">Item 3</div>
+      <div class="demo-item">Item 4</div>
+      <div class="demo-item">Item 5</div>
+    </fui-flex>
+  </div>
+
+  <!-- Flex Property Examples -->
+  <div class="example-section">
+    <div class="example-title">Flex Property</div>
+    <div class="example-description">Control how individual flex items grow and shrink</div>
+    
+    <h4>Flexible Items</h4>
+    <fui-flex gap="small">
+      <div class="demo-item" style="flex: 1;">Flex 1</div>
+      <div class="demo-item" style="flex: 2;">Flex 2</div>
+      <div class="demo-item" style="flex: 1;">Flex 1</div>
+    </fui-flex>
+    
+    <h4>Complex Flex Values</h4>
+    <fui-flex gap="small">
+      <div class="demo-item" style="flex: 1 1 200px;">200px min</div>
+      <div class="demo-item" style="flex: 1 1 150px;">150px min</div>
+      <div class="demo-item" style="flex: 0 0 auto;">Auto width</div>
+    </fui-flex>
+    
+    <h4>Container with Flex</h4>
+    <fui-flex flex="1" gap="small">
+      <div class="demo-item">Container</div>
+      <div class="demo-item">Flex</div>
+    </fui-flex>
+  </div>
+
+  <!-- Custom Component Examples -->
+  <div class="example-section">
+    <div class="example-title">Custom Component</div>
+    <div class="example-description">Use semantic HTML elements as the flex container</div>
+    
+    <h4>Section Element</h4>
+    <fui-flex component="section" gap="small" style="padding: 10px; background: #f0f0f0; border-radius: 4px;">
+      <div class="demo-item">Section</div>
+      <div class="demo-item">Content</div>
+    </fui-flex>
+    
+    <h4>Article Element</h4>
+    <fui-flex component="article" orientation="vertical" gap="middle" style="padding: 10px; background: #f9f9f9; border-radius: 4px;">
+      <div class="demo-item">Article</div>
+      <div class="demo-item">Content</div>
+    </fui-flex>
+    
+    <h4>Header Element</h4>
+    <fui-flex component="header" justify="space-between" align="center" gap="middle" style="padding: 10px; background: #e6f7ff; border-radius: 4px;">
+      <div class="demo-item">Header</div>
+      <div class="demo-item small">Navigation</div>
+    </fui-flex>
+  </div>
+
+  <!-- Complex Layout Examples -->
+  <div class="example-section">
+    <div class="example-title">Complex Layouts</div>
+    <div class="example-description">Real-world layout examples using nested flex containers</div>
+    
+    <h4>Card Layout</h4>
+    <fui-flex component="section" orientation="vertical" gap="large" style="padding: 20px; border: 1px solid #d9d9d9; border-radius: 8px; max-width: 400px;">
+      <fui-flex justify="space-between" align="center" style="margin-bottom: 15px;">
+        <h5 style="margin: 0;">Card Title</h5>
+        <fui-button type="text" size="small">Action</fui-button>
+      </fui-flex>
+      <fui-flex gap="middle">
+        <div class="demo-item alternate">Content 1</div>
+        <div class="demo-item alternate">Content 2</div>
+      </fui-flex>
+    </fui-flex>
+    
+    <h4>App Layout</h4>
+    <fui-flex component="section" orientation="vertical" gap="middle" style="height: 300px; border: 1px solid #d9d9d9; border-radius: 8px;">
+      <!-- Header -->
+      <fui-flex component="header" justify="space-between" align="center" gap="small" style="padding: 10px; background: #e6f7ff;">
+        <div class="demo-item small">Logo</div>
+        <fui-flex gap="small">
+          <div class="demo-item small">Nav</div>
+          <div class="demo-item small">Menu</div>
+        </fui-flex>
+      </fui-flex>
+      
+      <!-- Main Content -->
+      <fui-flex flex="1" gap="middle">
+        <fui-flex orientation="vertical" gap="small" style="flex: 2; padding: 10px; background: #f6ffed;">
+          <div class="demo-item warning">Main Content</div>
+          <div class="demo-item">Main Area</div>
+        </fui-flex>
+        
+        <!-- Sidebar -->
+        <fui-flex orientation="vertical" gap="small" style="flex: 1; padding: 10px; background: #fff7e6;">
+          <div class="demo-item medium">Sidebar</div>
+          <div class="demo-item small">Side Item</div>
+        </fui-flex>
+      </fui-flex>
+    </fui-flex>
+    
+    <h4>Form Layout</h4>
+    <fui-flex component="form" orientation="vertical" gap="large" style="padding: 20px; border: 1px solid #d9d9d9; border-radius: 8px; max-width: 400px;">
+      <fui-flex orientation="vertical" gap="middle">
+        <fui-flex justify="space-between" align="center" gap="small">
+          <label>Username:</label>
+          <div class="demo-item alternate" style="flex: 1;">Input field</div>
+        </fui-flex>
+        
+        <fui-flex justify="space-between" align="center" gap="small">
+          <label>Password:</label>
+          <div class="demo-item alternate" style="flex: 1;">Password field</div>
+        </fui-flex>
+      </fui-flex>
+      
+      <fui-flex justify="space-between" gap="middle">
+        <fui-button type="default">Cancel</fui-button>
+        <fui-flex gap="small">
+          <fui-button type="primary">Submit</fui-button>
+          <fui-button type="text">Forgot Password?</fui-button>
+        </fui-flex>
+      </fui-flex>
+    </fui-flex>
+  </div>
+
+  <!-- Responsive Behavior -->
+  <div class="example-section">
+    <div class="example-title">Responsive Behavior</div>
+    <div class="example-description">See how flex adapts to different container sizes</div>
+    
+    <div class="control-panel">
+      <label class="control-label">Container Width:</label>
+      <select id="widthControl" onchange="updateContainerWidth()">
+        <option value="200px">200px</option>
+        <option value="400px">400px</option>
+        <option value="600px">600px</option>
+        <option value="800px">800px</option>
+        <option value="100%">100%</option>
+      </select>
+      
+      <label class="control-label">Gap Size:</label>
+      <select id="gapControl" onchange="updateGapSize()">
+        <option value="small">Small</option>
+        <option value="middle">Middle</option>
+        <option value="large">Large</option>
+        <option value="30px">30px</option>
+      </select>
+    </div>
+    
+    <div class="interactive-demo">
+      <h4>Interactive Demo</h4>
+      <fui-flex id="interactiveFlex" wrap="wrap" gap="small" style="width: 400px; height: 200px; border: 1px solid #ccc; padding: 10px; transition: all 0.3s ease;">
+        <div class="demo-item">Responsive 1</div>
+        <div class="demo-item">Responsive 2</div>
+        <div class="demo-item">Responsive 3</div>
+        <div class="demo-item">Responsive 4</div>
+        <div class="demo-item">Responsive 5</div>
+        <div class="demo-item">Responsive 6</div>
+        <div class="demo-item">Responsive 7</div>
+        <div class="demo-item">Responsive 8</div>
+      </fui-flex>
+    </div>
+  </div>
+
+  <script>
+    function updateContainerWidth() {
+      const flex = document.getElementById('interactiveFlex');
+      const width = document.getElementById('widthControl').value;
+      flex.style.width = width;
+    }
+    
+    function updateGapSize() {
+      const flex = document.getElementById('interactiveFlex');
+      const gap = document.getElementById('gapControl').value;
+      flex.setAttribute('gap', gap);
+    }
+  </script>
+</body>
+</html>

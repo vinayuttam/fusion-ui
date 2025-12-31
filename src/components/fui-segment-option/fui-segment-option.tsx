@@ -5,7 +5,6 @@ import { Component, Prop } from '@stencil/core';
   styleUrl: 'fui-segment-option.css',
   shadow: false,
 })
-
 export class FUISegmentOption {
   @Prop() label: string;
   @Prop() value: string;

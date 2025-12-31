@@ -1,70 +1,201 @@
-<!DOCTYPE html>
+<!doctype html>
 <html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-  <title>Stencil Component Starter</title>
+    <link rel="stylesheet" href="/build/fusion-ui.css" />
+    <script type="module" src="/build/fusion-ui.esm.js"></script>
+    <script nomodule src="/build/fusion-ui.js"></script>
+  </head>
 
-  <link rel="stylesheet" href="/build/fusion-ui.css">
-  <script type="module" src="/build/fusion-ui.esm.js"></script>
-  <script nomodule src="/build/fusion-ui.js"></script>
-</head>
+  <body>
+    <div class="fui-heading-container">
+      <fui-heading level="1">Heading Level One</fui-heading>
+      <fui-heading level="2" type="secondary">Heading Level Two</fui-heading>
+      <fui-heading level="3" type="success">Heading Level Three</fui-heading>
+      <fui-heading level="4" type="warning">Heading Level Four</fui-heading>
+      <fui-heading level="5" type="danger">Heading Level Five</fui-heading>
+      <fui-heading level="6" type="primary">Heading Level Six</fui-heading>
+    </div>
 
-<body>
-  <div class="fui-heading-container">
-    <fui-heading level="1">Heading Level One</fui-heading>
-    <fui-heading level="2" type="secondary">Heading Level Two</fui-heading>
-    <fui-heading level="3" type="success">Heading Level Three</fui-heading>
-    <fui-heading level="4" type="warning">Heading Level Four</fui-heading>
-    <fui-heading level="5" type="danger">Heading Level Five</fui-heading>
-    <fui-heading level="6" type="primary">Heading Level Six</fui-heading>
-  </div>
+    <div class="fui-segment-container">
+      <fui-segment value="weekly" block>
+        <fui-segment-option label="Daily" value="daily"></fui-segment-option>
+        <fui-segment-option label="Weekly" value="weekly"></fui-segment-option>
+        <fui-segment-option label="Monthly" value="monthly"></fui-segment-option>
+      </fui-segment>
+    </div>
 
-  <div class="fui-segment-container">
-    <fui-segment value="weekly" block>
-      <fui-segment-option label="Daily" value="daily"></fui-segment-option>
-      <fui-segment-option label="Weekly" value="weekly"></fui-segment-option>
-      <fui-segment-option label="Monthly" value="monthly"></fui-segment-option>
-    </fui-segment>
-  </div>
+    <div class="fui-typography-container">
+      <fui-typography type="text">This is a text</fui-typography>
+      <fui-typography type="secondary">This is a secondary text</fui-typography>
+      <fui-typography type="success">This is a success text</fui-typography>
+      <fui-typography type="warning">This is a warning text</fui-typography>
+      <fui-typography type="danger">This is a danger text</fui-typography>
+      <fui-typography disabled>This is a disabled text</fui-typography>
+      <fui-typography mark>This is a marked text</fui-typography>
+      <fui-typography underline>This is an underlined text</fui-typography>
+      <fui-typography deleted>This is a deleted text</fui-typography>
+      <fui-typography strong>This is a strong text</fui-typography>
+      <fui-typography italic>This is an italic text</fui-typography>
+    </div>
 
-  <div class="fui-typography-container">
-    <fui-typography type="text">This is a text</fui-typography>
-    <fui-typography type="secondary">This is a secondary text</fui-typography>
-    <fui-typography type="success">This is a success text</fui-typography>
-    <fui-typography type="warning">This is a warning text</fui-typography>
-    <fui-typography type="danger">This is a danger text</fui-typography>
-    <fui-typography disabled>This is a disabled text</fui-typography>
-    <fui-typography mark>This is a marked text</fui-typography>
-    <fui-typography underline>This is an underlined text</fui-typography>
-    <fui-typography deleted>This is a deleted text</fui-typography>
-    <fui-typography strong>This is a strong text</fui-typography>
-    <fui-typography italic>This is an italic text</fui-typography>
-  </div>
+    <div class="fui-button-container">
+      <fui-flex gap="8px" justify="space-evenly">
+        <fui-button type="primary">Primary Button</fui-button>
+        <fui-button type="primary" size="small">Primary Button</fui-button>
+        <fui-button type="primary" size="large">Primary Button</fui-button>
+        <fui-button type="default">Default Button</fui-button>
+        <fui-button type="dashed">Dashed Button</fui-button>
+        <fui-button type="text">Text Button</fui-button>
+        <fui-button type="link">Link Button</fui-button>
+        <fui-button type="primary" danger>Primary Button</fui-button>
+        <fui-button type="primary" danger block>Primary Button</fui-button>
+      </fui-flex>
+    </div>
 
-  <div class="fui-button-container">
-    <fui-flex gap="8px" horizontal justify="space-evenly">
-      <fui-button type="primary">Primary Button</fui-button>
-      <fui-button type="primary" size="small">Primary Button</fui-button>
-      <fui-button type="primary" size="large">Primary Button</fui-button>
-      <fui-button type="default">Default Button</fui-button>
-      <fui-button type="dashed">Dashed Button</fui-button>
-      <fui-button type="text">Text Button</fui-button>
-      <fui-button type="link">Link Button</fui-button>
-      <fui-button type="primary" danger>Primary Button</fui-button>
-      <fui-button type="primary" danger block>Primary Button</fui-button>
-    </fui-flex>
-  </div>
+    <div style="margin-top: 30px; padding: 20px; background: #f0f0f0; border-radius: 8px">
+      <h3>Flex Component Examples</h3>
+      <p>Comprehensive examples showcasing all features of the FUI Flex component!</p>
 
-  <script>
-    // Example on how to listen to the change in value of segment
-    const segmentedElement = document.querySelector('fui-segment');
-    segmentedElement.addEventListener('segmentValueChange', (event) => {
-      console.log('Selected value:', event.detail);
-    });
-  </script>
+      <!-- Basic Usage -->
+      <div style="margin-bottom: 30px; padding: 15px; border: 1px solid #d9d9d9; border-radius: 4px">
+        <h4>Basic Usage</h4>
+        <p style="margin-bottom: 10px; color: #666">Simple horizontal flex layout with default gap</p>
+        <fui-flex gap="small">
+          <div style="padding: 8px 12px; background: #1890ff; color: white; border-radius: 4px">Item 1</div>
+          <div style="padding: 8px 12px; background: #1890ff; color: white; border-radius: 4px">Item 2</div>
+          <div style="padding: 8px 12px; background: #1890ff; color: white; border-radius: 4px">Item 3</div>
+        </fui-flex>
+      </div>
 
-</body>
+      <!-- Direction Examples -->
+      <div style="margin-bottom: 30px; padding: 15px; border: 1px solid #d9d9d9; border-radius: 4px">
+        <h4>Direction Control</h4>
+        <p style="margin-bottom: 10px; color: #666">Control flex direction using orientation or vertical properties</p>
 
+        <div style="margin-bottom: 15px">
+          <strong>Horizontal (default):</strong>
+          <fui-flex gap="middle" style="margin-top: 5px">
+            <div style="padding: 8px 12px; background: #52c41a; color: white; border-radius: 4px">Horizontal 1</div>
+            <div style="padding: 8px 12px; background: #52c41a; color: white; border-radius: 4px">Horizontal 2</div>
+            <div style="padding: 8px 12px; background: #52c41a; color: white; border-radius: 4px">Horizontal 3</div>
+          </fui-flex>
+        </div>
+
+        <div>
+          <strong>Vertical:</strong>
+          <fui-flex orientation="vertical" gap="middle" style="margin-top: 5px">
+            <div style="padding: 8px 12px; background: #faad14; color: white; border-radius: 4px">Vertical 1</div>
+            <div style="padding: 8px 12px; background: #faad14; color: white; border-radius: 4px">Vertical 2</div>
+            <div style="padding: 8px 12px; background: #faad14; color: white; border-radius: 4px">Vertical 3</div>
+          </fui-flex>
+        </div>
+      </div>
+
+      <!-- Justify Content Examples -->
+      <div style="margin-bottom: 30px; padding: 15px; border: 1px solid #d9d9d9; border-radius: 4px">
+        <h4>Justify Content</h4>
+        <p style="margin-bottom: 10px; color: #666">Control horizontal alignment of flex items</p>
+
+        <div style="margin-bottom: 10px">
+          <strong>Center:</strong>
+          <fui-flex justify="center" gap="small" style="margin-top: 5px">
+            <div style="padding: 6px 10px; background: #722ed1; color: white; border-radius: 4px; font-size: 12px">Center</div>
+            <div style="padding: 10px 15px; background: #722ed1; color: white; border-radius: 4px">Large Item</div>
+            <div style="padding: 6px 10px; background: #722ed1; color: white; border-radius: 4px; font-size: 12px">Center</div>
+          </fui-flex>
+        </div>
+
+        <div style="margin-bottom: 10px">
+          <strong>Space Between:</strong>
+          <fui-flex justify="space-between" gap="small" style="margin-top: 5px">
+            <div style="padding: 6px 10px; background: #ff4d4f; color: white; border-radius: 4px; font-size: 12px">Between</div>
+            <div style="padding: 10px 15px; background: #ff4d4f; color: white; border-radius: 4px">Large Item</div>
+            <div style="padding: 6px 10px; background: #ff4d4f; color: white; border-radius: 4px; font-size: 12px">Between</div>
+          </fui-flex>
+        </div>
+
+        <div>
+          <strong>Space Evenly:</strong>
+          <fui-flex justify="space-evenly" gap="small" style="margin-top: 5px">
+            <div style="padding: 6px 10px; background: #13c2c2; color: white; border-radius: 4px; font-size: 12px">Evenly</div>
+            <div style="padding: 10px 15px; background: #13c2c2; color: white; border-radius: 4px">Large Item</div>
+            <div style="padding: 6px 10px; background: #13c2c2; color: white; border-radius: 4px; font-size: 12px">Evenly</div>
+          </fui-flex>
+        </div>
+      </div>
+
+      <!-- Gap Examples -->
+      <div style="margin-bottom: 30px; padding: 15px; border: 1px solid #d9d9d9; border-radius: 4px">
+        <h4>Gap Spacing</h4>
+        <p style="margin-bottom: 10px; color: #666">Control spacing between flex items using gap presets or custom values</p>
+
+        <div style="margin-bottom: 10px">
+          <strong>Small Gap (6px):</strong>
+          <fui-flex gap="small" style="margin-top: 5px">
+            <div style="padding: 8px 12px; background: #1890ff; color: white; border-radius: 4px">Small</div>
+            <div style="padding: 8px 12px; background: #1890ff; color: white; border-radius: 4px">Gap</div>
+            <div style="padding: 8px 12px; background: #1890ff; color: white; border-radius: 4px">Small</div>
+          </fui-flex>
+        </div>
+
+        <div style="margin-bottom: 10px">
+          <strong>Middle Gap (12px):</strong>
+          <fui-flex gap="middle" style="margin-top: 5px">
+            <div style="padding: 8px 12px; background: #52c41a; color: white; border-radius: 4px">Middle</div>
+            <div style="padding: 8px 12px; background: #52c41a; color: white; border-radius: 4px">Gap</div>
+            <div style="padding: 8px 12px; background: #52c41a; color: white; border-radius: 4px">Middle</div>
+          </fui-flex>
+        </div>
+
+        <div>
+          <strong>Large Gap (24px):</strong>
+          <fui-flex gap="large" style="margin-top: 5px">
+            <div style="padding: 8px 12px; background: #faad14; color: white; border-radius: 4px">Large</div>
+            <div style="padding: 8px 12px; background: #faad14; color: white; border-radius: 4px">Gap</div>
+            <div style="padding: 8px 12px; background: #faad14; color: white; border-radius: 4px">Large</div>
+          </fui-flex>
+        </div>
+      </div>
+
+      <!-- Wrap Examples -->
+      <div style="padding: 15px; border: 1px solid #d9d9d9; border-radius: 4px">
+        <h4>Wrap Control</h4>
+        <p style="margin-bottom: 10px; color: #666">Control how flex items wrap when they run out of space</p>
+
+        <div style="margin-bottom: 15px">
+          <strong>No Wrap (default):</strong>
+          <fui-flex wrap="nowrap" gap="small" style="margin-top: 5px; width: 300px; border: 1px solid #ccc; padding: 10px; overflow: hidden">
+            <div style="padding: 6px 10px; background: #722ed1; color: white; border-radius: 4px; font-size: 12px">Item 1</div>
+            <div style="padding: 6px 10px; background: #722ed1; color: white; border-radius: 4px; font-size: 12px">Item 2</div>
+            <div style="padding: 6px 10px; background: #722ed1; color: white; border-radius: 4px; font-size: 12px">Item 3</div>
+            <div style="padding: 6px 10px; background: #722ed1; color: white; border-radius: 4px; font-size: 12px">Item 4</div>
+            <div style="padding: 6px 10px; background: #722ed1; color: white; border-radius: 4px; font-size: 12px">Item 5</div>
+          </fui-flex>
+        </div>
+
+        <div>
+          <strong>Wrap:</strong>
+          <fui-flex wrap="wrap" gap="small" style="margin-top: 5px; width: 300px; border: 1px solid #ccc; padding: 10px">
+            <div style="padding: 6px 10px; background: #ff4d4f; color: white; border-radius: 4px; font-size: 12px">Item 1</div>
+            <div style="padding: 6px 10px; background: #ff4d4f; color: white; border-radius: 4px; font-size: 12px">Item 2</div>
+            <div style="padding: 6px 10px; background: #ff4d4f; color: white; border-radius: 4px; font-size: 12px">Item 3</div>
+            <div style="padding: 6px 10px; background: #ff4d4f; color: white; border-radius: 4px; font-size: 12px">Item 4</div>
+            <div style="padding: 6px 10px; background: #ff4d4f; color: white; border-radius: 4px; font-size: 12px">Item 5</div>
+          </fui-flex>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Example on how to listen to the change in value of segment
+      const segmentedElement = document.querySelector('fui-segment');
+      segmentedElement.addEventListener('segmentValueChange', event => {
+        console.log('Selected value:', event.detail);
+      });
+    </script>
+  </body>
 </html>

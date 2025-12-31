@@ -17,12 +17,11 @@ export class FUIHeading {
         class={{
           'fui-heading': true,
           [`fui-heading-${this.level}`]: true,
-          [`fui-heading-${this.type}`]: !!this.type
+          [`fui-heading-${this.type}`]: !!this.type,
         }}
       >
         <slot></slot>
       </Tag>
     );
   }
-
 }

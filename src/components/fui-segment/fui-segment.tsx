@@ -11,7 +11,6 @@ interface SegmentedOption {
   styleUrl: 'fui-segment.css',
   shadow: true,
 })
-
 export class FUISegment {
   @Element() host: HTMLElement;
 
@@ -85,5 +84,4 @@ export class FUISegment {
       </div>
     );
   }
-
 }
