@@ -3,198 +3,528 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-    <title>Stencil Component Starter</title>
+    <title>Fusion UI - Component Library</title>
+    <meta name="description" content="A modern, comprehensive component library built with Stencil.js" />
 
     <link rel="stylesheet" href="/build/fusion-ui.css" />
     <script type="module" src="/build/fusion-ui.esm.js"></script>
     <script nomodule src="/build/fusion-ui.js"></script>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--fui-bg-layout);
+        min-height: 100vh;
+      }
+
+      .hero {
+        background: linear-gradient(135deg, var(--fui-color-primary) 0%, #4096ff 100%);
+        color: white;
+        padding: 60px 40px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.1);
+        z-index: 1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .section {
+        padding: 60px 0;
+        background: white;
+        margin: 20px 0;
+        border-radius: var(--fui-border-radius-lg);
+        box-shadow: var(--fui-box-shadow);
+      }
+
+      .section:nth-child(even) {
+        background: var(--fui-bg-elevated);
+      }
+
+      .showcase-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 30px;
+      }
+
+      .showcase-card {
+        background: white;
+        border: 1px solid var(--fui-border-color);
+        border-radius: var(--fui-border-radius);
+        padding: 24px;
+        transition: all 0.3s ease;
+      }
+
+      .showcase-card:hover {
+        box-shadow: var(--fui-box-shadow);
+        transform: translateY(-2px);
+      }
+
+      .showcase-title {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: var(--fui-text-color);
+      }
+
+      .showcase-description {
+        color: var(--fui-text-color-secondary);
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+
+      .demo-area {
+        padding: 20px;
+        background: var(--fui-bg-layout);
+        border-radius: var(--fui-border-radius);
+        min-height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .navigation {
+        background: white;
+        border-bottom: 1px solid var(--fui-border-color);
+        padding: 20px 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      }
+
+      .footer {
+        background: var(--fui-text-color);
+        color: white;
+        text-align: center;
+        padding: 40px 20px;
+        margin-top: 40px;
+      }
+
+      /* Temporary debug styles */
+      fui-button {
+        display: inline-block !important;
+        visibility: visible !important;
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          padding: 40px 20px;
+        }
+
+        .showcase-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .section {
+          margin: 10px 0;
+          padding: 40px 20px;
+        }
+      }
+    </style>
   </head>
 
   <body>
-    <div class="fui-heading-container">
-      <fui-heading level="1">Heading Level One</fui-heading>
-      <fui-heading level="2" type="secondary">Heading Level Two</fui-heading>
-      <fui-heading level="3" type="success">Heading Level Three</fui-heading>
-      <fui-heading level="4" type="warning">Heading Level Four</fui-heading>
-      <fui-heading level="5" type="danger">Heading Level Five</fui-heading>
-      <fui-heading level="6" type="primary">Heading Level Six</fui-heading>
-    </div>
-
-    <div class="fui-segment-container">
-      <fui-segment value="weekly" block>
-        <fui-segment-option label="Daily" value="daily"></fui-segment-option>
-        <fui-segment-option label="Weekly" value="weekly"></fui-segment-option>
-        <fui-segment-option label="Monthly" value="monthly"></fui-segment-option>
-      </fui-segment>
-    </div>
-
-    <div class="fui-typography-container">
-      <fui-typography type="text">This is a text</fui-typography>
-      <fui-typography type="secondary">This is a secondary text</fui-typography>
-      <fui-typography type="success">This is a success text</fui-typography>
-      <fui-typography type="warning">This is a warning text</fui-typography>
-      <fui-typography type="danger">This is a danger text</fui-typography>
-      <fui-typography disabled>This is a disabled text</fui-typography>
-      <fui-typography mark>This is a marked text</fui-typography>
-      <fui-typography underline>This is an underlined text</fui-typography>
-      <fui-typography deleted>This is a deleted text</fui-typography>
-      <fui-typography strong>This is a strong text</fui-typography>
-      <fui-typography italic>This is an italic text</fui-typography>
-    </div>
-
-    <div class="fui-button-container">
-      <fui-flex gap="8px" justify="space-evenly">
-        <fui-button type="primary">Primary Button</fui-button>
-        <fui-button type="primary" size="small">Primary Button</fui-button>
-        <fui-button type="primary" size="large">Primary Button</fui-button>
-        <fui-button type="default">Default Button</fui-button>
-        <fui-button type="dashed">Dashed Button</fui-button>
-        <fui-button type="text">Text Button</fui-button>
-        <fui-button type="link">Link Button</fui-button>
-        <fui-button type="primary" danger>Primary Button</fui-button>
-        <fui-button type="primary" danger block>Primary Button</fui-button>
-      </fui-flex>
-    </div>
-
-    <div style="margin-top: 30px; padding: 20px; background: #f0f0f0; border-radius: 8px">
-      <h3>Flex Component Examples</h3>
-      <p>Comprehensive examples showcasing all features of the FUI Flex component!</p>
-
-      <!-- Basic Usage -->
-      <div style="margin-bottom: 30px; padding: 15px; border: 1px solid #d9d9d9; border-radius: 4px">
-        <h4>Basic Usage</h4>
-        <p style="margin-bottom: 10px; color: #666">Simple horizontal flex layout with default gap</p>
-        <fui-flex gap="small">
-          <div style="padding: 8px 12px; background: #1890ff; color: white; border-radius: 4px">Item 1</div>
-          <div style="padding: 8px 12px; background: #1890ff; color: white; border-radius: 4px">Item 2</div>
-          <div style="padding: 8px 12px; background: #1890ff; color: white; border-radius: 4px">Item 3</div>
+    <!-- Navigation -->
+    <div class="navigation">
+      <div class="container">
+        <fui-flex justify="space-between" align="center">
+          <fui-heading level="2" style="margin: 0">Fusion UI</fui-heading>
+          <fui-segment value="components" style="max-width: 400px">
+            <fui-segment-option label="Overview" value="overview"></fui-segment-option>
+            <fui-segment-option label="Components" value="components"></fui-segment-option>
+            <fui-segment-option label="Examples" value="examples"></fui-segment-option>
+          </fui-segment>
         </fui-flex>
       </div>
+    </div>
 
-      <!-- Direction Examples -->
-      <div style="margin-bottom: 30px; padding: 15px; border: 1px solid #d9d9d9; border-radius: 4px">
-        <h4>Direction Control</h4>
-        <p style="margin-bottom: 10px; color: #666">Control flex direction using orientation or vertical properties</p>
+    <!-- Hero Section -->
+    <div class="hero">
+      <div class="hero-content">
+        <fui-heading level="1" style="color: white; margin-bottom: 20px"> Fusion UI Components </fui-heading>
+        <fui-typography style="font-size: 20px; color: rgba(255, 255, 255, 0.9); margin-bottom: 30px; display: block">
+          A modern, accessible, and beautiful component library built with Stencil.js
+        </fui-typography>
+        <fui-space size="large">
+          <fui-button type="primary" size="large">Get Started</fui-button>
+          <fui-button type="default" size="large" style="background: rgba(255, 255, 255, 0.1); color: white; border: 1px solid rgba(255, 255, 255, 0.3)">
+            View Documentation
+          </fui-button>
+        </fui-space>
+      </div>
+    </div>
 
-        <div style="margin-bottom: 15px">
-          <strong>Horizontal (default):</strong>
-          <fui-flex gap="middle" style="margin-top: 5px">
-            <div style="padding: 8px 12px; background: #52c41a; color: white; border-radius: 4px">Horizontal 1</div>
-            <div style="padding: 8px 12px; background: #52c41a; color: white; border-radius: 4px">Horizontal 2</div>
-            <div style="padding: 8px 12px; background: #52c41a; color: white; border-radius: 4px">Horizontal 3</div>
-          </fui-flex>
-        </div>
+    <!-- Alert Examples Section -->
+    <div class="section">
+      <div class="container">
+        <fui-heading level="2">Alerts</fui-heading>
+        <fui-typography type="secondary"> Display important messages to users with different severity levels. </fui-typography>
 
-        <div>
-          <strong>Vertical:</strong>
-          <fui-flex orientation="vertical" gap="middle" style="margin-top: 5px">
-            <div style="padding: 8px 12px; background: #faad14; color: white; border-radius: 4px">Vertical 1</div>
-            <div style="padding: 8px 12px; background: #faad14; color: white; border-radius: 4px">Vertical 2</div>
-            <div style="padding: 8px 12px; background: #faad14; color: white; border-radius: 4px">Vertical 3</div>
-          </fui-flex>
+        <div class="showcase-grid" style="margin-top: 30px">
+          <div class="showcase-card">
+            <div class="showcase-title">Success Alert</div>
+            <div class="showcase-description">Positive feedback message</div>
+            <div class="demo-area">
+              <fui-alert type="success" message="Success!" description="Your changes have been saved successfully." closable="true"></fui-alert>
+            </div>
+          </div>
+
+          <div class="showcase-card">
+            <div class="showcase-title">Warning Alert</div>
+            <div class="showcase-description">Cautionary message</div>
+            <div class="demo-area">
+              <fui-alert type="warning" message="Warning" description="Please review your input carefully."></fui-alert>
+            </div>
+          </div>
+
+          <div class="showcase-card">
+            <div class="showcase-title">Error Alert</div>
+            <div class="showcase-description">Error message display</div>
+            <div class="demo-area">
+              <fui-alert type="error" message="Error" description="Something went wrong. Please try again." closable="true"></fui-alert>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
 
-      <!-- Justify Content Examples -->
-      <div style="margin-bottom: 30px; padding: 15px; border: 1px solid #d9d9d9; border-radius: 4px">
-        <h4>Justify Content</h4>
-        <p style="margin-bottom: 10px; color: #666">Control horizontal alignment of flex items</p>
+    <!-- Buttons Section -->
+    <div class="section">
+      <div class="container">
+        <fui-heading level="2">Buttons</fui-heading>
+        <fui-typography type="secondary"> Interactive elements for user actions with various styles and states. </fui-typography>
 
-        <div style="margin-bottom: 10px">
-          <strong>Center:</strong>
-          <fui-flex justify="center" gap="small" style="margin-top: 5px">
-            <div style="padding: 6px 10px; background: #722ed1; color: white; border-radius: 4px; font-size: 12px">Center</div>
-            <div style="padding: 10px 15px; background: #722ed1; color: white; border-radius: 4px">Large Item</div>
-            <div style="padding: 6px 10px; background: #722ed1; color: white; border-radius: 4px; font-size: 12px">Center</div>
-          </fui-flex>
-        </div>
+        <div class="showcase-grid" style="margin-top: 30px">
+          <div class="showcase-card">
+            <div class="showcase-title">Button Variants</div>
+            <div class="showcase-description">Different button styles</div>
+            <div class="demo-area">
+              <fui-flex orientation="vertical" gap="small">
+                <fui-button type="primary" block>Primary Action</fui-button>
+                <fui-button type="default" block>Default Action</fui-button>
+                <fui-button type="dashed" block>Dashed Action</fui-button>
+                <fui-button type="text" block>Text Action</fui-button>
+                <fui-button type="link" block>Link Action</fui-button>
+              </fui-flex>
+            </div>
+          </div>
 
-        <div style="margin-bottom: 10px">
-          <strong>Space Between:</strong>
-          <fui-flex justify="space-between" gap="small" style="margin-top: 5px">
-            <div style="padding: 6px 10px; background: #ff4d4f; color: white; border-radius: 4px; font-size: 12px">Between</div>
-            <div style="padding: 10px 15px; background: #ff4d4f; color: white; border-radius: 4px">Large Item</div>
-            <div style="padding: 6px 10px; background: #ff4d4f; color: white; border-radius: 4px; font-size: 12px">Between</div>
-          </fui-flex>
-        </div>
+          <div class="showcase-card">
+            <div class="showcase-title">Button Sizes</div>
+            <div class="showcase-description">Different button sizes</div>
+            <div class="demo-area">
+              <fui-flex orientation="vertical" gap="small" style="width: 100%">
+                <fui-button type="primary" size="large" block>Large Button</fui-button>
+                <fui-button type="primary" size="middle" block>Medium Button</fui-button>
+                <fui-button type="primary" size="small" block>Small Button</fui-button>
+              </fui-flex>
+            </div>
+          </div>
 
-        <div>
-          <strong>Space Evenly:</strong>
-          <fui-flex justify="space-evenly" gap="small" style="margin-top: 5px">
-            <div style="padding: 6px 10px; background: #13c2c2; color: white; border-radius: 4px; font-size: 12px">Evenly</div>
-            <div style="padding: 10px 15px; background: #13c2c2; color: white; border-radius: 4px">Large Item</div>
-            <div style="padding: 6px 10px; background: #13c2c2; color: white; border-radius: 4px; font-size: 12px">Evenly</div>
-          </fui-flex>
-        </div>
-      </div>
-
-      <!-- Gap Examples -->
-      <div style="margin-bottom: 30px; padding: 15px; border: 1px solid #d9d9d9; border-radius: 4px">
-        <h4>Gap Spacing</h4>
-        <p style="margin-bottom: 10px; color: #666">Control spacing between flex items using gap presets or custom values</p>
-
-        <div style="margin-bottom: 10px">
-          <strong>Small Gap (6px):</strong>
-          <fui-flex gap="small" style="margin-top: 5px">
-            <div style="padding: 8px 12px; background: #1890ff; color: white; border-radius: 4px">Small</div>
-            <div style="padding: 8px 12px; background: #1890ff; color: white; border-radius: 4px">Gap</div>
-            <div style="padding: 8px 12px; background: #1890ff; color: white; border-radius: 4px">Small</div>
-          </fui-flex>
-        </div>
-
-        <div style="margin-bottom: 10px">
-          <strong>Middle Gap (12px):</strong>
-          <fui-flex gap="middle" style="margin-top: 5px">
-            <div style="padding: 8px 12px; background: #52c41a; color: white; border-radius: 4px">Middle</div>
-            <div style="padding: 8px 12px; background: #52c41a; color: white; border-radius: 4px">Gap</div>
-            <div style="padding: 8px 12px; background: #52c41a; color: white; border-radius: 4px">Middle</div>
-          </fui-flex>
-        </div>
-
-        <div>
-          <strong>Large Gap (24px):</strong>
-          <fui-flex gap="large" style="margin-top: 5px">
-            <div style="padding: 8px 12px; background: #faad14; color: white; border-radius: 4px">Large</div>
-            <div style="padding: 8px 12px; background: #faad14; color: white; border-radius: 4px">Gap</div>
-            <div style="padding: 8px 12px; background: #faad14; color: white; border-radius: 4px">Large</div>
-          </fui-flex>
+          <div class="showcase-card">
+            <div class="showcase-title">Special States</div>
+            <div class="showcase-description">Danger and disabled states</div>
+            <div class="demo-area">
+              <fui-flex orientation="vertical" gap="small" style="width: 100%">
+                <fui-button type="primary" danger block>Danger Action</fui-button>
+                <fui-button type="default" block>Normal Action</fui-button>
+              </fui-flex>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
 
-      <!-- Wrap Examples -->
-      <div style="padding: 15px; border: 1px solid #d9d9d9; border-radius: 4px">
-        <h4>Wrap Control</h4>
-        <p style="margin-bottom: 10px; color: #666">Control how flex items wrap when they run out of space</p>
+    <!-- Typography Section -->
+    <div class="section">
+      <div class="container">
+        <fui-heading level="2">Typography</fui-heading>
+        <fui-typography type="secondary"> Comprehensive text styling options for various content needs. </fui-typography>
 
-        <div style="margin-bottom: 15px">
-          <strong>No Wrap (default):</strong>
-          <fui-flex wrap="nowrap" gap="small" style="margin-top: 5px; width: 300px; border: 1px solid #ccc; padding: 10px; overflow: hidden">
-            <div style="padding: 6px 10px; background: #722ed1; color: white; border-radius: 4px; font-size: 12px">Item 1</div>
-            <div style="padding: 6px 10px; background: #722ed1; color: white; border-radius: 4px; font-size: 12px">Item 2</div>
-            <div style="padding: 6px 10px; background: #722ed1; color: white; border-radius: 4px; font-size: 12px">Item 3</div>
-            <div style="padding: 6px 10px; background: #722ed1; color: white; border-radius: 4px; font-size: 12px">Item 4</div>
-            <div style="padding: 6px 10px; background: #722ed1; color: white; border-radius: 4px; font-size: 12px">Item 5</div>
-          </fui-flex>
+        <div class="showcase-grid" style="margin-top: 30px">
+          <div class="showcase-card">
+            <div class="showcase-title">Text Types</div>
+            <div class="showcase-description">Different text colors and styles</div>
+            <div class="demo-area" style="text-align: left; padding: 10px">
+              <fui-typography type="text">Default text</fui-typography><br />
+              <fui-typography type="secondary">Secondary text</fui-typography><br />
+              <fui-typography type="success">Success text</fui-typography><br />
+              <fui-typography type="warning">Warning text</fui-typography><br />
+              <fui-typography type="danger">Danger text</fui-typography>
+            </div>
+          </div>
+
+          <div class="showcase-card">
+            <div class="showcase-title">Text Decorations</div>
+            <div class="showcase-description">Various text formatting options</div>
+            <div class="demo-area" style="text-align: left; padding: 10px">
+              <fui-typography strong>Bold text</fui-typography><br />
+              <fui-typography italic>Italic text</fui-typography><br />
+              <fui-typography underline>Underlined text</fui-typography><br />
+              <fui-typography mark>Highlighted text</fui-typography><br />
+              <fui-typography deleted>Deleted text</fui-typography>
+            </div>
+          </div>
+
+          <div class="showcase-card">
+            <div class="showcase-title">Headings</div>
+            <div class="showcase-description">Heading hierarchy examples</div>
+            <div class="demo-area" style="text-align: left; padding: 10px">
+              <fui-heading level="1">Heading 1</fui-heading>
+              <fui-heading level="2">Heading 2</fui-heading>
+              <fui-heading level="3">Heading 3</fui-heading>
+              <fui-heading level="4">Heading 4</fui-heading>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
 
-        <div>
-          <strong>Wrap:</strong>
-          <fui-flex wrap="wrap" gap="small" style="margin-top: 5px; width: 300px; border: 1px solid #ccc; padding: 10px">
-            <div style="padding: 6px 10px; background: #ff4d4f; color: white; border-radius: 4px; font-size: 12px">Item 1</div>
-            <div style="padding: 6px 10px; background: #ff4d4f; color: white; border-radius: 4px; font-size: 12px">Item 2</div>
-            <div style="padding: 6px 10px; background: #ff4d4f; color: white; border-radius: 4px; font-size: 12px">Item 3</div>
-            <div style="padding: 6px 10px; background: #ff4d4f; color: white; border-radius: 4px; font-size: 12px">Item 4</div>
-            <div style="padding: 6px 10px; background: #ff4d4f; color: white; border-radius: 4px; font-size: 12px">Item 5</div>
-          </fui-flex>
+    <!-- Layout Section -->
+    <div class="section">
+      <div class="container">
+        <fui-heading level="2">Layout Components</fui-heading>
+        <fui-typography type="secondary"> Powerful layout utilities for creating responsive designs. </fui-typography>
+
+        <div class="showcase-grid" style="margin-top: 30px">
+          <div class="showcase-card">
+            <div class="showcase-title">Flex Layout</div>
+            <div class="showcase-description">Flexible box layouts</div>
+            <div class="demo-area">
+              <fui-flex justify="center" gap="small">
+                <div style="padding: 8px 16px; background: var(--fui-color-primary); color: white; border-radius: 4px">Item 1</div>
+                <div style="padding: 8px 16px; background: var(--fui-color-success); color: white; border-radius: 4px">Item 2</div>
+                <div style="padding: 8px 16px; background: var(--fui-color-warning); color: white; border-radius: 4px">Item 3</div>
+              </fui-flex>
+            </div>
+          </div>
+
+          <div class="showcase-card">
+            <div class="showcase-title">Space Component</div>
+            <div class="showcase-description">Consistent spacing</div>
+            <div class="demo-area">
+              <fui-space size="middle" direction="vertical">
+                <fui-button type="primary" size="small">Item 1</fui-button>
+                <fui-button type="default" size="small">Item 2</fui-button>
+                <fui-button type="dashed" size="small">Item 3</fui-button>
+              </fui-space>
+            </div>
+          </div>
+
+          <div class="showcase-card">
+            <div class="showcase-title">Segments</div>
+            <div class="showcase-description">Segmented controls</div>
+            <div class="demo-area">
+              <fui-segment value="option1">
+                <fui-segment-option label="Option 1" value="option1"></fui-segment-option>
+                <fui-segment-option label="Option 2" value="option2"></fui-segment-option>
+                <fui-segment-option label="Option 3" value="option3"></fui-segment-option>
+              </fui-segment>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="section" style="background: var(--fui-bg-layout)">
+      <div class="container">
+        <fui-heading level="2">Key Features</fui-heading>
+        <fui-typography type="secondary"> Why choose Fusion UI for your next project? </fui-typography>
+
+        <div class="showcase-grid" style="margin-top: 30px">
+          <div class="showcase-card">
+            <div class="showcase-title">🎨 Modern Design</div>
+            <div class="showcase-description">Clean, professional design system with extensive customization options</div>
+          </div>
+
+          <div class="showcase-card">
+            <div class="showcase-title">♿ Accessible</div>
+            <div class="showcase-description">Built with accessibility in mind, following WCAG guidelines</div>
+          </div>
+
+          <div class="showcase-card">
+            <div class="showcase-title">📱 Responsive</div>
+            <div class="showcase-description">Components that work seamlessly across all device sizes</div>
+          </div>
+
+          <div class="showcase-card">
+            <div class="showcase-title">⚡ Lightweight</div>
+            <div class="showcase-description">Optimized performance with minimal bundle size</div>
+          </div>
+
+          <div class="showcase-card">
+            <div class="showcase-title">🔧 Customizable</div>
+            <div class="showcase-description">Extensive theming and configuration options</div>
+          </div>
+
+          <div class="showcase-card">
+            <div class="showcase-title">🧪 Well Tested</div>
+            <div class="showcase-description">Comprehensive test coverage for reliability</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Examples Section -->
+    <div class="section">
+      <div class="container">
+        <fui-heading level="2">Component Examples</fui-heading>
+        <fui-typography type="secondary"> Detailed examples and documentation for individual components. </fui-typography>
+
+        <div class="showcase-grid" style="margin-top: 30px">
+          <div class="showcase-card">
+            <div class="showcase-title">Alert Component</div>
+            <div class="showcase-description">Comprehensive alert examples with all configurations</div>
+            <div class="demo-area">
+              <fui-button type="primary" onclick="window.open('/examples/alert-examples.html', '_blank')"> View Alert Examples </fui-button>
+            </div>
+          </div>
+
+          <div class="showcase-card">
+            <div class="showcase-title">Flex Layout</div>
+            <div class="showcase-description">Advanced flexbox layout examples and patterns</div>
+            <div class="demo-area">
+              <fui-button type="primary" onclick="window.open('/examples/flex-examples.html', '_blank')"> View Flex Examples </fui-button>
+            </div>
+          </div>
+
+          <div class="showcase-card">
+            <div class="showcase-title">Space Component</div>
+            <div class="showcase-description">Spacing utilities and layout examples</div>
+            <div class="demo-area">
+              <fui-button type="primary" onclick="window.open('/examples/space-examples.html', '_blank')"> View Space Examples </fui-button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="container">
+        <fui-heading level="3" style="color: white; margin-bottom: 20px">Get Started Today</fui-heading>
+        <fui-typography style="color: rgba(255, 255, 255, 0.8); margin-bottom: 30px; display: block"> Ready to build amazing interfaces with Fusion UI? </fui-typography>
+        <fui-space size="large">
+          <fui-button type="primary" size="large">Documentation</fui-button>
+          <fui-button type="default" size="large" style="background: rgba(255, 255, 255, 0.1); color: white; border: 1px solid rgba(255, 255, 255, 0.3)"> GitHub </fui-button>
+        </fui-space>
+
+        <div style="margin-top: 40px; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.2)">
+          <fui-typography type="secondary" style="color: rgba(255, 255, 255, 0.6)"> © 2024 Fusion UI. Built with ❤️ using Stencil.js </fui-typography>
         </div>
       </div>
     </div>
 
     <script>
+      // Debug component loading
+      document.addEventListener('DOMContentLoaded', function () {
+        console.log('DOM loaded, checking components...');
+        setTimeout(() => {
+          const components = document.querySelectorAll('fui-button, fui-heading, fui-flex, fui-space, fui-alert, fui-segment, fui-typography');
+          console.log('Found components:', components.length);
+          components.forEach(comp => {
+            console.log('Component:', comp.tagName, comp.shadowRoot ? 'has shadow root' : 'no shadow root');
+          });
+        }, 1000);
+      });
+
+      // Navigation segment functionality
+      const navSegment = document.querySelector('.navigation fui-segment');
+      if (navSegment) {
+        navSegment.addEventListener('segmentValueChange', event => {
+          console.log('Navigation selected:', event.detail);
+          // Smooth scroll to different sections
+          switch (event.detail) {
+            case 'overview':
+              document.querySelector('.hero').scrollIntoView({ behavior: 'smooth' });
+              break;
+            case 'components':
+              document.querySelector('.section').scrollIntoView({ behavior: 'smooth' });
+              break;
+            case 'examples':
+              // Find the examples section and scroll to it
+              const examplesSection = document.querySelector('.section:nth-last-child(2)');
+              if (examplesSection) {
+                examplesSection.scrollIntoView({ behavior: 'smooth' });
+              }
+              break;
+          }
+        });
+      }
+
       // Example on how to listen to the change in value of segment
-      const segmentedElement = document.querySelector('fui-segment');
-      segmentedElement.addEventListener('segmentValueChange', event => {
-        console.log('Selected value:', event.detail);
+      const segmentElements = document.querySelectorAll('fui-segment');
+      segmentElements.forEach(element => {
+        element.addEventListener('segmentValueChange', event => {
+          console.log('Selected value:', event.detail);
+        });
+      });
+
+      // Alert close handler
+      const alerts = document.querySelectorAll('fui-alert[closable="true"]');
+      alerts.forEach(alert => {
+        alert.addEventListener('close', () => {
+          console.log('Alert closed');
+        });
+      });
+
+      // Button functionality
+      document.querySelectorAll('fui-button').forEach(button => {
+        button.addEventListener('click', function (e) {
+          const buttonText = this.textContent.trim().toLowerCase();
+          console.log('Button clicked:', buttonText);
+
+          switch (buttonText) {
+            case 'get started':
+            case 'documentation':
+              window.open('https://github.com/vinayuttam/fusion-ui', '_blank');
+              break;
+            case 'view documentation':
+              window.open('https://github.com/vinayuttam/fusion-ui#readme', '_blank');
+              break;
+            case 'github':
+              window.open('https://github.com/vinayuttam/fusion-ui', '_blank');
+              break;
+            default:
+              console.log('Action:', buttonText);
+          }
+        });
+      });
+
+      // Add smooth scrolling for internal navigation
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
       });
     </script>
   </body>

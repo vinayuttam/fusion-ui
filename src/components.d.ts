@@ -6,6 +6,15 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface FuiAlert {
+        "banner": boolean;
+        "closable": boolean;
+        "closeText": string;
+        "description": string;
+        "message": string;
+        "showIcon": boolean;
+        "type": 'success' | 'info' | 'warning' | 'error';
+    }
     interface FuiButton {
         "block": boolean;
         "danger": boolean;
@@ -38,6 +47,13 @@ export namespace Components {
         "label": string;
         "value": string;
     }
+    interface FuiSpace {
+        "align": 'start' | 'end' | 'center' | 'baseline';
+        "direction": 'horizontal' | 'vertical';
+        "size": 'small' | 'middle' | 'large' | number | [number, number];
+        "split": string;
+        "wrap": boolean;
+    }
     interface FuiTypography {
         "code": boolean;
         "deleted": boolean;
@@ -50,11 +66,32 @@ export namespace Components {
         "underline": boolean;
     }
 }
+export interface FuiAlertCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFuiAlertElement;
+}
 export interface FuiSegmentCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLFuiSegmentElement;
 }
 declare global {
+    interface HTMLFuiAlertElementEventMap {
+        "close": any;
+    }
+    interface HTMLFuiAlertElement extends Components.FuiAlert, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLFuiAlertElementEventMap>(type: K, listener: (this: HTMLFuiAlertElement, ev: FuiAlertCustomEvent<HTMLFuiAlertElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLFuiAlertElementEventMap>(type: K, listener: (this: HTMLFuiAlertElement, ev: FuiAlertCustomEvent<HTMLFuiAlertElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLFuiAlertElement: {
+        prototype: HTMLFuiAlertElement;
+        new (): HTMLFuiAlertElement;
+    };
     interface HTMLFuiButtonElement extends Components.FuiButton, HTMLStencilElement {
     }
     var HTMLFuiButtonElement: {
@@ -96,6 +133,12 @@ declare global {
         prototype: HTMLFuiSegmentOptionElement;
         new (): HTMLFuiSegmentOptionElement;
     };
+    interface HTMLFuiSpaceElement extends Components.FuiSpace, HTMLStencilElement {
+    }
+    var HTMLFuiSpaceElement: {
+        prototype: HTMLFuiSpaceElement;
+        new (): HTMLFuiSpaceElement;
+    };
     interface HTMLFuiTypographyElement extends Components.FuiTypography, HTMLStencilElement {
     }
     var HTMLFuiTypographyElement: {
@@ -103,15 +146,27 @@ declare global {
         new (): HTMLFuiTypographyElement;
     };
     interface HTMLElementTagNameMap {
+        "fui-alert": HTMLFuiAlertElement;
         "fui-button": HTMLFuiButtonElement;
         "fui-flex": HTMLFuiFlexElement;
         "fui-heading": HTMLFuiHeadingElement;
         "fui-segment": HTMLFuiSegmentElement;
         "fui-segment-option": HTMLFuiSegmentOptionElement;
+        "fui-space": HTMLFuiSpaceElement;
         "fui-typography": HTMLFuiTypographyElement;
     }
 }
 declare namespace LocalJSX {
+    interface FuiAlert {
+        "banner"?: boolean;
+        "closable"?: boolean;
+        "closeText"?: string;
+        "description"?: string;
+        "message"?: string;
+        "onClose"?: (event: FuiAlertCustomEvent<any>) => void;
+        "showIcon"?: boolean;
+        "type"?: 'success' | 'info' | 'warning' | 'error';
+    }
     interface FuiButton {
         "block"?: boolean;
         "danger"?: boolean;
@@ -145,6 +200,13 @@ declare namespace LocalJSX {
         "label"?: string;
         "value"?: string;
     }
+    interface FuiSpace {
+        "align"?: 'start' | 'end' | 'center' | 'baseline';
+        "direction"?: 'horizontal' | 'vertical';
+        "size"?: 'small' | 'middle' | 'large' | number | [number, number];
+        "split"?: string;
+        "wrap"?: boolean;
+    }
     interface FuiTypography {
         "code"?: boolean;
         "deleted"?: boolean;
@@ -157,11 +219,13 @@ declare namespace LocalJSX {
         "underline"?: boolean;
     }
     interface IntrinsicElements {
+        "fui-alert": FuiAlert;
         "fui-button": FuiButton;
         "fui-flex": FuiFlex;
         "fui-heading": FuiHeading;
         "fui-segment": FuiSegment;
         "fui-segment-option": FuiSegmentOption;
+        "fui-space": FuiSpace;
         "fui-typography": FuiTypography;
     }
 }
@@ -169,11 +233,13 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "fui-alert": LocalJSX.FuiAlert & JSXBase.HTMLAttributes<HTMLFuiAlertElement>;
             "fui-button": LocalJSX.FuiButton & JSXBase.HTMLAttributes<HTMLFuiButtonElement>;
             "fui-flex": LocalJSX.FuiFlex & JSXBase.HTMLAttributes<HTMLFuiFlexElement>;
             "fui-heading": LocalJSX.FuiHeading & JSXBase.HTMLAttributes<HTMLFuiHeadingElement>;
             "fui-segment": LocalJSX.FuiSegment & JSXBase.HTMLAttributes<HTMLFuiSegmentElement>;
             "fui-segment-option": LocalJSX.FuiSegmentOption & JSXBase.HTMLAttributes<HTMLFuiSegmentOptionElement>;
+            "fui-space": LocalJSX.FuiSpace & JSXBase.HTMLAttributes<HTMLFuiSpaceElement>;
             "fui-typography": LocalJSX.FuiTypography & JSXBase.HTMLAttributes<HTMLFuiTypographyElement>;
         }
     }

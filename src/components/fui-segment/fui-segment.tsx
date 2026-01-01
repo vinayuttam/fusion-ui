@@ -39,14 +39,20 @@ export class FUISegment {
         this.options = JSON.parse(this.optionsJson);
       } catch (e) {
         console.error('Failed to parse optionsJson:', e);
+        this.options = [];
       }
     } else {
-      const optionElements = this.host.querySelectorAll('fui-segment-option');
-      this.options = Array.from(optionElements).map(el => ({
-        label: el.getAttribute('label'),
-        value: el.getAttribute('value'),
-        disabled: el.hasAttribute('disabled'),
-      }));
+      try {
+        const optionElements = this.host.querySelectorAll('fui-segment-option');
+        this.options = Array.from(optionElements).map(el => ({
+          label: el.getAttribute('label'),
+          value: el.getAttribute('value'),
+          disabled: el.hasAttribute('disabled'),
+        }));
+      } catch (e) {
+        console.error('Failed to query option elements:', e);
+        this.options = [];
+      }
     }
   }
 

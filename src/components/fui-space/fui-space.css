@@ -1,0 +1,126 @@
+:host {
+  display: inline-flex;
+}
+
+.fui-space {
+  margin: 0;
+  padding: 0;
+}
+
+.fui-space:empty {
+  display: none;
+}
+
+/* Direction classes */
+.fui-space.fui-space-horizontal {
+  flex-direction: row;
+}
+
+.fui-space.fui-space-vertical {
+  flex-direction: column;
+}
+
+/* Size preset classes */
+.fui-space.fui-space-size-small {
+  gap: 6px;
+}
+
+.fui-space.fui-space-size-middle {
+  gap: 12px;
+}
+
+.fui-space.fui-space-size-large {
+  gap: 24px;
+}
+
+.fui-space.fui-space-size-middle:not([style*='gap']) {
+  gap: 12px;
+}
+
+.fui-space.fui-space-size-large:not([style*='gap']) {
+  gap: 24px;
+}
+
+/* Align classes */
+.fui-space.fui-space-align-start {
+  align-items: flex-start;
+}
+
+.fui-space.fui-space-align-end {
+  align-items: flex-end;
+}
+
+.fui-space.fui-space-align-center {
+  align-items: center;
+}
+
+.fui-space.fui-space-align-baseline {
+  align-items: baseline;
+}
+
+/* Wrap class */
+.fui-space.fui-space-wrap {
+  flex-wrap: wrap;
+}
+
+/* Split separator */
+.fui-space-split {
+  display: inline-flex;
+  align-items: center;
+  color: var(--fui-text-color-teritary);
+  font-size: 14px;
+}
+
+.fui-space-horizontal .fui-space-split {
+  margin: 0;
+}
+
+.fui-space-vertical .fui-space-split {
+  margin: 0;
+}
+
+/* Compact mode for forms */
+.fui-space-compact {
+  display: flex;
+  flex-direction: column;
+}
+
+.fui-space-compact > *:not(:first-child):not(:last-child) {
+  margin: 0;
+}
+
+.fui-space-compact > *:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.fui-space-compact > *:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.fui-space-compact > *:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+
+/* RTL support */
+.fui-space[dir='rtl'] {
+  direction: rtl;
+}
+
+.fui-space[dir='rtl'].fui-space-align-start {
+  align-items: flex-end;
+}
+
+.fui-space[dir='rtl'].fui-space-align-end {
+  align-items: flex-start;
+}
+
+/* Animation for split */
+.fui-space-split {
+  transition: color 0.3s ease;
+}
+
+.fui-space-split:hover {
+  color: var(--fui-text-color-secondary);
+}

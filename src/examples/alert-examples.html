@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FUI Alert Component Examples</title>
+    <script src="../dist/fusion-ui.js"></script>
+    <style>
+      body {
+        font-family: 'Open Sans', sans-serif;
+        padding: 20px;
+        background-color: #f5f5f5;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+      .example {
+        margin-bottom: 30px;
+        padding: 20px;
+        border: 1px solid #e8e8e8;
+        border-radius: 6px;
+      }
+      .example-title {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: #262626;
+      }
+      .example-description {
+        margin-bottom: 15px;
+        color: #666;
+        font-size: 14px;
+      }
+      .alert-example {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>FUI Alert Component Examples</h1>
+
+      <div class="example">
+        <div class="example-title">Basic Alerts</div>
+        <div class="example-description">Different types of alert messages with icons.</div>
+        <fui-alert type="success" message="Success Text" show-icon></fui-alert>
+        <fui-alert type="info" message="Info Text" show-icon></fui-alert>
+        <fui-alert type="warning" message="Warning Text" show-icon></fui-alert>
+        <fui-alert type="error" message="Error Text" show-icon></fui-alert>
+      </div>
+
+      <div class="example">
+        <div class="example-title">Alerts with Description</div>
+        <div class="example-description">Alerts with additional description text.</div>
+        <fui-alert type="success" message="Success Tips" description="Detailed description and advice about successful copywriting." show-icon></fui-alert>
+        <fui-alert type="info" message="Informational Notes" description="Additional description and information about copywriting." show-icon></fui-alert>
+        <fui-alert type="warning" message="Warning" description="This is a warning notice about copywriting." show-icon></fui-alert>
+        <fui-alert type="error" message="Error" description="This is an error message about copywriting." show-icon></fui-alert>
+      </div>
+
+      <div class="example">
+        <div class="example-title">Closable Alerts</div>
+        <div class="example-description">Alerts that can be closed by the user.</div>
+        <fui-alert type="success" message="Success Text" description="This is a success alert with close button." closable show-icon></fui-alert>
+        <fui-alert type="info" message="Info Text" closable close-text="Close Now" show-icon></fui-alert>
+        <fui-alert type="warning" message="Warning Text" description="This warning can be dismissed." closable show-icon></fui-alert>
+      </div>
+
+      <div class="example">
+        <div class="example-title">Banner Alerts</div>
+        <div class="example-description">Banner style alerts that span the full width.</div>
+        <fui-alert type="success" message="Success Banner" banner show-icon></fui-alert>
+        <fui-alert type="warning" message="Warning Banner" description="This is a warning banner message." banner closable show-icon></fui-alert>
+      </div>
+
+      <div class="example">
+        <div class="example-title">Alerts Without Icons</div>
+        <div class="example-description">Simple alerts without icons for minimal styling.</div>
+        <fui-alert type="success" message="Success Text"></fui-alert>
+        <fui-alert type="info" message="Info Text"></fui-alert>
+        <fui-alert type="warning" message="Warning Text" closable></fui-alert>
+        <fui-alert type="error" message="Error Text"></fui-alert>
+      </div>
+
+      <div class="example">
+        <div class="example-title">Message Only Alerts</div>
+        <div class="example-description">Alerts with only message text (compact style).</div>
+        <fui-alert type="success" message="Success" show-icon></fui-alert>
+        <fui-alert type="info" message="Information" show-icon></fui-alert>
+        <fui-alert type="warning" message="Warning" show-icon></fui-alert>
+        <fui-alert type="error" message="Error" show-icon></fui-alert>
+      </div>
+
+      <div class="example">
+        <div class="example-title">Description Only Alerts</div>
+        <div class="example-description">Alerts with only description text.</div>
+        <fui-alert type="success" description="Detailed description about success scenario." show-icon></fui-alert>
+        <fui-alert type="warning" description="This is a detailed warning message with no title." show-icon closable></fui-alert>
+      </div>
+    </div>
+
+    <script>
+      // Add event listeners to demonstrate close functionality
+      document.querySelectorAll('fui-alert').forEach(alert => {
+        alert.addEventListener('close', () => {
+          console.log('Alert closed:', alert.message || 'Alert with description');
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,462 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>FUI Space Component Examples</title>
+    <link rel="stylesheet" href="/build/fusion-ui.css" />
+    <script type="module" src="/build/fusion-ui.esm.js"></script>
+    <script nomodule src="/build/fusion-ui.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .example-section {
+        margin-bottom: 40px;
+        padding: 20px;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+      }
+
+      .example-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: #1890ff;
+      }
+
+      .example-description {
+        margin-bottom: 15px;
+        color: #666;
+        font-size: 14px;
+      }
+
+      .demo-item {
+        padding: 12px 16px;
+        background: #1890ff;
+        color: white;
+        border-radius: 4px;
+        text-align: center;
+        min-width: 80px;
+      }
+
+      .demo-item.large {
+        min-width: 120px;
+        min-height: 60px;
+      }
+
+      .demo-item.medium {
+        min-width: 100px;
+        min-height: 50px;
+      }
+
+      .demo-item.small {
+        min-width: 60px;
+        min-height: 40px;
+      }
+
+      .demo-item.alternate {
+        background: #52c41a;
+      }
+
+      .demo-item.warning {
+        background: #faad14;
+      }
+
+      .demo-item.danger {
+        background: #ff4d4f;
+      }
+
+      .demo-item.purple {
+        background: #722ed1;
+      }
+
+      .control-panel {
+        margin-bottom: 20px;
+        padding: 15px;
+        background: #f5f5f5;
+        border-radius: 4px;
+      }
+
+      .control-label {
+        font-weight: bold;
+        margin-right: 10px;
+      }
+
+      .interactive-demo {
+        border: 2px dashed #d9d9d9;
+        background: #fafafa;
+      }
+
+      .demo-container {
+        border: 1px solid #d9d9d9;
+        padding: 10px;
+        margin: 10px 0;
+        background: #fafafa;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>FUI Space Component Examples</h1>
+    <p>Comprehensive examples showcasing all features of FUI Space component, including spacing, alignment, wrapping, and split separators.</p>
+
+    <!-- Basic Usage -->
+    <div class="example-section">
+      <div class="example-title">Basic Usage</div>
+      <div class="example-description">Simple horizontal space layout with default small gap</div>
+      <fui-space>
+        <div class="demo-item">Item 1</div>
+        <div class="demo-item">Item 2</div>
+        <div class="demo-item">Item 3</div>
+      </fui-space>
+    </div>
+
+    <!-- Size Examples -->
+    <div class="example-section">
+      <div class="example-title">Size Spacing</div>
+      <div class="example-description">Control spacing between items using size presets or custom values</div>
+
+      <h4>Small Gap (6px)</h4>
+      <fui-space size="small">
+        <div class="demo-item small">Small</div>
+        <div class="demo-item small">Gap</div>
+        <div class="demo-item small">Small</div>
+      </fui-space>
+
+      <h4>Middle Gap (12px)</h4>
+      <fui-space size="middle">
+        <div class="demo-item">Middle</div>
+        <div class="demo-item">Gap</div>
+        <div class="demo-item">Middle</div>
+      </fui-space>
+
+      <h4>Large Gap (24px)</h4>
+      <fui-space size="large">
+        <div class="demo-item large">Large</div>
+        <div class="demo-item large">Gap</div>
+        <div class="demo-item large">Large</div>
+      </fui-space>
+
+      <h4>Custom Number Gap (30px)</h4>
+      <fui-space size="30">
+        <div class="demo-item">Custom</div>
+        <div class="demo-item">30px</div>
+        <div class="demo-item">Gap</div>
+      </fui-space>
+
+      <h4>Custom String Gap (20px)</h4>
+      <fui-space size="20px">
+        <div class="demo-item">Custom</div>
+        <div class="demo-item">20px</div>
+        <div class="demo-item">Gap</div>
+      </fui-space>
+    </div>
+
+    <!-- Direction Examples -->
+    <div class="example-section">
+      <div class="example-title">Direction Control</div>
+      <div class="example-description">Control the direction of space layout</div>
+
+      <h4>Horizontal (default)</h4>
+      <fui-space size="middle">
+        <div class="demo-item">Horizontal 1</div>
+        <div class="demo-item">Horizontal 2</div>
+        <div class="demo-item">Horizontal 3</div>
+      </fui-space>
+
+      <h4>Vertical</h4>
+      <fui-space direction="vertical" size="middle">
+        <div class="demo-item">Vertical 1</div>
+        <div class="demo-item">Vertical 2</div>
+        <div class="demo-item">Vertical 3</div>
+      </fui-space>
+    </div>
+
+    <!-- Alignment Examples -->
+    <div class="example-section">
+      <div class="example-title">Alignment Control</div>
+      <div class="example-description">Control alignment of items within the space container</div>
+
+      <h4>Start Alignment</h4>
+      <div class="demo-container">
+        <fui-space align="start" size="small">
+          <div class="demo-item small">Start</div>
+          <div class="demo-item large">Large Item</div>
+          <div class="demo-item small">Start</div>
+        </fui-space>
+      </div>
+
+      <h4>Center Alignment (default for horizontal)</h4>
+      <div class="demo-container">
+        <fui-space align="center" size="small">
+          <div class="demo-item small">Center</div>
+          <div class="demo-item large">Large Item</div>
+          <div class="demo-item small">Center</div>
+        </fui-space>
+      </div>
+
+      <h4>End Alignment</h4>
+      <div class="demo-container">
+        <fui-space align="end" size="small">
+          <div class="demo-item small">End</div>
+          <div class="demo-item large">Large Item</div>
+          <div class="demo-item small">End</div>
+        </fui-space>
+      </div>
+
+      <h4>Baseline Alignment</h4>
+      <div class="demo-container">
+        <fui-space align="baseline" size="small">
+          <div class="demo-item" style="font-size: 12px; padding: 8px 12px">Small Text</div>
+          <div class="demo-item" style="font-size: 24px; padding: 16px 20px">Large Text</div>
+          <div class="demo-item" style="font-size: 12px; padding: 8px 12px">Small Text</div>
+        </fui-space>
+      </div>
+    </div>
+
+    <!-- Split Examples -->
+    <div class="example-section">
+      <div class="example-title">Split Separators</div>
+      <div class="example-description">Add separators between items using the split property</div>
+
+      <h4>Text Separator</h4>
+      <fui-space split="|" size="middle">
+        <div class="demo-item alternate">Option 1</div>
+        <div class="demo-item alternate">Option 2</div>
+        <div class="demo-item alternate">Option 3</div>
+      </fui-space>
+
+      <h4>Arrow Separator</h4>
+      <fui-space split="→" size="middle">
+        <div class="demo-item">Step 1</div>
+        <div class="demo-item">Step 2</div>
+        <div class="demo-item">Step 3</div>
+      </fui-space>
+
+      <h4>Bullet Separator</h4>
+      <fui-space split="•" size="small">
+        <div class="demo-item warning">Item A</div>
+        <div class="demo-item warning">Item B</div>
+        <div class="demo-item warning">Item C</div>
+      </fui-space>
+
+      <h4>Slash Separator (Navigation)</h4>
+      <fui-space split="/" size="small">
+        <div class="demo-item small" style="background: #f0f0f0; color: #333">Home</div>
+        <div class="demo-item small" style="background: #e6f7ff; color: #1890ff">Products</div>
+        <div class="demo-item small" style="background: #f0f0f0; color: #333">Details</div>
+      </fui-space>
+
+      <h4>Vertical with Split</h4>
+      <fui-space direction="vertical" split="—" size="middle">
+        <div class="demo-item purple">Section 1</div>
+        <div class="demo-item purple">Section 2</div>
+        <div class="demo-item purple">Section 3</div>
+      </fui-space>
+    </div>
+
+    <!-- Wrap Examples -->
+    <div class="example-section">
+      <div class="example-title">Wrap Control</div>
+      <div class="example-description">Control how items wrap when they run out of space</div>
+
+      <h4>No Wrap (default)</h4>
+      <div class="demo-container" style="width: 300px">
+        <fui-space wrap="false" size="small">
+          <div class="demo-item small">Item 1</div>
+          <div class="demo-item small">Item 2</div>
+          <div class="demo-item small">Item 3</div>
+          <div class="demo-item small">Item 4</div>
+          <div class="demo-item small">Item 5</div>
+        </fui-space>
+      </div>
+
+      <h4>Wrap Enabled</h4>
+      <div class="demo-container" style="width: 300px">
+        <fui-space wrap="true" size="small">
+          <div class="demo-item small">Item 1</div>
+          <div class="demo-item small">Item 2</div>
+          <div class="demo-item small">Item 3</div>
+          <div class="demo-item small">Item 4</div>
+          <div class="demo-item small">Item 5</div>
+        </fui-space>
+      </div>
+    </div>
+
+    <!-- Array Gap Examples -->
+    <div class="example-section">
+      <div class="example-title">Array Gap Values</div>
+      <div class="example-description">Control row and column gaps independently using array values</div>
+
+      <h4>Row: 10px, Column: 20px</h4>
+      <fui-space size="[10, 20]" wrap="true">
+        <div class="demo-item alternate">Row 10</div>
+        <div class="demo-item alternate">Col 20</div>
+        <div class="demo-item alternate">Row 10</div>
+        <div class="demo-item alternate">Col 20</div>
+        <div class="demo-item alternate">Row 10</div>
+      </fui-space>
+
+      <h4>Vertical with Array Gaps</h4>
+      <fui-space direction="vertical" size="[20, 10]">
+        <div class="demo-item warning">Row 20</div>
+        <div class="demo-item warning">Col 10</div>
+        <div class="demo-item warning">Row 20</div>
+      </fui-space>
+    </div>
+
+    <!-- Real-world Examples -->
+    <div class="example-section">
+      <div class="example-title">Real-world Examples</div>
+      <div class="example-description">Practical usage examples in common UI patterns</div>
+
+      <h4>Breadcrumb Navigation</h4>
+      <fui-space size="small">
+        <div class="demo-item small" style="background: #f0f0f0; color: #666">Home</div>
+        <fui-space split=">">
+          <div class="demo-item small" style="background: #f0f0f0; color: #666">Products</div>
+          <div class="demo-item small" style="background: #f0f0f0; color: #666">Electronics</div>
+          <div class="demo-item small" style="background: #e6f7ff; color: #1890ff">Laptops</div>
+        </fui-space>
+      </fui-space>
+
+      <h4>Button Group</h4>
+      <fui-space size="middle">
+        <div class="demo-item" style="background: #f5f5f5; color: #666">Cancel</div>
+        <div class="demo-item alternate" style="background: #52c41a">Save</div>
+        <div class="demo-item" style="background: #1890ff">Submit</div>
+      </fui-space>
+
+      <h4>Form Fields</h4>
+      <fui-space direction="vertical" size="large">
+        <div style="width: 100%">
+          <label style="display: block; margin-bottom: 8px">Username:</label>
+          <div class="demo-item" style="width: 100%; text-align: left; background: #fff; border: 1px solid #d9d9d9; color: #666">Input field placeholder</div>
+        </div>
+        <div style="width: 100%">
+          <label style="display: block; margin-bottom: 8px">Email:</label>
+          <div class="demo-item" style="width: 100%; text-align: left; background: #fff; border: 1px solid #d9d9d9; color: #666">Email input placeholder</div>
+        </div>
+        <fui-space size="middle">
+          <div class="demo-item" style="background: #f5f5f5; color: #666">Clear</div>
+          <div class="demo-item alternate">Register</div>
+        </fui-space>
+      </fui-space>
+
+      <h4>Card Actions</h4>
+      <div style="border: 1px solid #d9d9d9; padding: 16px; border-radius: 8px; max-width: 400px">
+        <h5 style="margin: 0 0 12px 0">Card Title</h5>
+        <p style="margin: 0 0 16px 0; color: #666">This is a card with action buttons at the bottom.</p>
+        <fui-space size="small" align="center">
+          <div class="demo-item small" style="background: #f5f5f5; color: #666">Like</div>
+          <div class="demo-item small" style="background: #f5f5f5; color: #666">Share</div>
+          <div class="demo-item small" style="background: #ff4d4f">Delete</div>
+          <div class="demo-item small alternate" style="margin-left: auto">Edit</div>
+        </fui-space>
+      </div>
+
+      <h4>Tag List</h4>
+      <fui-space size="small" wrap="true">
+        <div class="demo-item small" style="background: #e6f7ff; color: #1890ff; border-radius: 12px">React</div>
+        <div class="demo-item small" style="background: #f6ffed; color: #52c41a; border-radius: 12px">Vue.js</div>
+        <div class="demo-item small" style="background: #fff7e6; color: #faad14; border-radius: 12px">Angular</div>
+        <div class="demo-item small" style="background: #f9f0ff; color: #722ed1; border-radius: 12px">TypeScript</div>
+        <div class="demo-item small" style="background: #e6f7ff; color: #1890ff; border-radius: 12px">JavaScript</div>
+        <div class="demo-item small" style="background: #fff1f0; color: #ff4d4f; border-radius: 12px">HTML</div>
+      </fui-space>
+    </div>
+
+    <!-- Interactive Demo -->
+    <div class="example-section">
+      <div class="example-title">Interactive Demo</div>
+      <div class="example-description">Experiment with different space properties in real-time</div>
+
+      <div class="control-panel">
+        <label class="control-label">Size:</label>
+        <select id="sizeControl" onchange="updateDemo()">
+          <option value="small">Small (6px)</option>
+          <option value="middle" selected>Middle (12px)</option>
+          <option value="large">Large (24px)</option>
+          <option value="30">Custom (30px)</option>
+          <option value="[10, 20]">Array [10, 20]</option>
+        </select>
+
+        <label class="control-label">Direction:</label>
+        <select id="directionControl" onchange="updateDemo()">
+          <option value="horizontal" selected>Horizontal</option>
+          <option value="vertical">Vertical</option>
+        </select>
+
+        <label class="control-label">Align:</label>
+        <select id="alignControl" onchange="updateDemo()">
+          <option value="">Default</option>
+          <option value="start">Start</option>
+          <option value="center">Center</option>
+          <option value="end">End</option>
+          <option value="baseline">Baseline</option>
+        </select>
+
+        <label class="control-label">Wrap:</label>
+        <select id="wrapControl" onchange="updateDemo()">
+          <option value="false" selected>No Wrap</option>
+          <option value="true">Wrap</option>
+        </select>
+
+        <label class="control-label">Split:</label>
+        <select id="splitControl" onchange="updateDemo()">
+          <option value="">None</option>
+          <option value="|">|</option>
+          <option value="→">→</option>
+          <option value="/">/</option>
+          <option value="•">•</option>
+        </select>
+      </div>
+
+      <div class="interactive-demo">
+        <h4>Interactive Space Component</h4>
+        <div style="border: 1px solid #d9d9d9; padding: 16px; margin-top: 12px">
+          <fui-space id="interactiveSpace" size="middle" direction="horizontal" wrap="false">
+            <div class="demo-item">Item 1</div>
+            <div class="demo-item alternate">Item 2</div>
+            <div class="demo-item warning">Item 3</div>
+            <div class="demo-item danger">Item 4</div>
+            <div class="demo-item purple">Item 5</div>
+          </fui-space>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function updateDemo() {
+        const space = document.getElementById('interactiveSpace');
+        const size = document.getElementById('sizeControl').value;
+        const direction = document.getElementById('directionControl').value;
+        const align = document.getElementById('alignControl').value;
+        const wrap = document.getElementById('wrapControl').value;
+        const split = document.getElementById('splitControl').value;
+
+        // Update attributes
+        space.setAttribute('size', size);
+        space.setAttribute('direction', direction);
+        space.setAttribute('wrap', wrap);
+
+        if (align) {
+          space.setAttribute('align', align);
+        } else {
+          space.removeAttribute('align');
+        }
+
+        if (split) {
+          space.setAttribute('split', split);
+        } else {
+          space.removeAttribute('split');
+        }
+      }
+    </script>
+  </body>
+</html>
